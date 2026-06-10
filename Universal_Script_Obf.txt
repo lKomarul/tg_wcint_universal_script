@@ -1,0 +1,3825 @@
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+
+]]--
+
+local v0 = loadstring(game:HttpGet("https://sirius.menu/rayfield"))();
+local v1 = v0:CreateWindow({Name="Universal Script",Icon=(1130 - (369 + 761)),LoadingTitle="Universal Script",LoadingSubtitle="creator’s Telegram: @wcint",Theme="Default",ConfigurationSaving={Enabled=true,FolderName="UniversalScript",FileName="Settings"},KeySystem=false});
+local v2 = v1:CreateTab("ESP", nil);
+local v3 = v1:CreateTab("Movement", nil);
+local v4 = v1:CreateTab("Teleport", nil);
+local v5 = v1:CreateTab("Other", nil);
+local v6 = false;
+local v7 = false;
+local v8 = false;
+local v9 = false;
+local v10 = false;
+local v11 = false;
+local v12 = false;
+local v13 = false;
+local v14 = false;
+local v15 = false;
+local v16 = false;
+local v17 = false;
+local v18 = false;
+local v19 = {};
+local v20 = 6 + 4;
+local v21 = 10;
+local v22 = 90 - 40;
+local v23 = 94 - 44;
+local v24 = 100;
+local v25 = nil;
+local v26 = {};
+local v27 = nil;
+local v28 = nil;
+local v29 = nil;
+local v30 = nil;
+local v31 = nil;
+local v32 = nil;
+local v33 = nil;
+local v34 = {};
+local v35 = nil;
+local v36 = nil;
+local v37, v38, v39 = 0, 0, 238 - (64 + 174);
+local v40 = nil;
+local v41 = 0 + 0;
+local v42 = 0.5 - 0;
+local function v43(v76)
+	local FlatIdent_2876F = 0;
+	local v77;
+	local v78;
+	while true do
+		if (FlatIdent_2876F == 1) then
+			while true do
+				local FlatIdent_8AD85 = 0;
+				local v209;
+				while true do
+					if (FlatIdent_8AD85 == 0) then
+						v209 = 0;
+						while true do
+							if (v209 == (217 - (42 + 174))) then
+								if (v77 == (1 + 0)) then
+									local FlatIdent_91CC3 = 0;
+									while true do
+										if (FlatIdent_91CC3 == 0) then
+											if (not v78 or (v78.Health <= (0 + 0))) then
+												return false;
+											end
+											for v397, v398 in pairs(game.Players:GetPlayers()) do
+												if (v398.Character == v76) then
+													return v398 ~= game.Players.LocalPlayer;
+												end
+											end
+											FlatIdent_91CC3 = 1;
+										end
+										if (1 == FlatIdent_91CC3) then
+											v77 = 1 + 1;
+											break;
+										end
+									end
+								end
+								break;
+							end
+							if ((1504 - (363 + 1141)) == v209) then
+								local FlatIdent_20FDE = 0;
+								while true do
+									if (FlatIdent_20FDE == 0) then
+										if (v77 == (1580 - (1183 + 397))) then
+											if not v76 then
+												return false;
+											end
+											v78 = v76:FindFirstChildOfClass("Humanoid");
+											v77 = 1;
+										end
+										if (v77 == 2) then
+											return false;
+										end
+										FlatIdent_20FDE = 1;
+									end
+									if (FlatIdent_20FDE == 1) then
+										v209 = 2 - 1;
+										break;
+									end
+								end
+							end
+						end
+						break;
+					end
+				end
+			end
+			break;
+		end
+		if (FlatIdent_2876F == 0) then
+			v77 = 336 - (144 + 192);
+			v78 = nil;
+			FlatIdent_2876F = 1;
+		end
+	end
+end
+local function v44(v79)
+	local FlatIdent_2953F = 0;
+	local v80;
+	local v81;
+	local v82;
+	while true do
+		if (FlatIdent_2953F == 0) then
+			if (not v79 or not v79:FindFirstChild("HumanoidRootPart")) then
+				return false;
+			end
+			v80 = game.Players.LocalPlayer.Character;
+			FlatIdent_2953F = 1;
+		end
+		if (FlatIdent_2953F == 2) then
+			return v82;
+		end
+		if (FlatIdent_2953F == 1) then
+			if (not v80 or not v80:FindFirstChild("HumanoidRootPart")) then
+				return false;
+			end
+			v81, v82 = workspace.CurrentCamera:WorldToViewportPoint(v79.HumanoidRootPart.Position);
+			FlatIdent_2953F = 2;
+		end
+	end
+end
+local function v45()
+	local FlatIdent_2BD95 = 0;
+	local v83;
+	local v84;
+	local v85;
+	while true do
+		if (FlatIdent_2BD95 == 1) then
+			v85 = nil;
+			while true do
+				if (v83 == (0 + 0)) then
+					local FlatIdent_60EA1 = 0;
+					while true do
+						if (FlatIdent_60EA1 == 0) then
+							v84, v85 = pcall(function()
+								return game:GetService("Teams"):GetTeams();
+							end);
+							return v84 and (#v85 > (1975 - (1913 + 62)));
+						end
+					end
+				end
+			end
+			break;
+		end
+		if (FlatIdent_2BD95 == 0) then
+			v83 = 0 + 0;
+			v84 = nil;
+			FlatIdent_2BD95 = 1;
+		end
+	end
+end
+local function v46(v86)
+	local FlatIdent_42214 = 0;
+	local v87;
+	local v88;
+	while true do
+		if (FlatIdent_42214 == 0) then
+			v87 = 0 + 0;
+			v88 = nil;
+			FlatIdent_42214 = 1;
+		end
+		if (FlatIdent_42214 == 1) then
+			while true do
+				local FlatIdent_31A5A = 0;
+				while true do
+					if (FlatIdent_31A5A == 0) then
+						if (v87 == (2 - 1)) then
+							local FlatIdent_5ED46 = 0;
+							while true do
+								if (FlatIdent_5ED46 == 0) then
+									if (v88 and v88.TeamColor) then
+										return v88.TeamColor.Color;
+									end
+									return Color3.fromRGB(0, 2188 - (565 + 1368), 0);
+								end
+							end
+						end
+						if (v87 == (0 - 0)) then
+							local FlatIdent_61585 = 0;
+							while true do
+								if (1 == FlatIdent_61585) then
+									v87 = 1;
+									break;
+								end
+								if (0 == FlatIdent_61585) then
+									if (not v86 or not v86.Team) then
+										return Color3.fromRGB(1661 - (1477 + 184), 346 - 91, 0 + 0);
+									end
+									v88 = v86.Team;
+									FlatIdent_61585 = 1;
+								end
+							end
+						end
+						break;
+					end
+				end
+			end
+			break;
+		end
+	end
+end
+local function v47(v89)
+	local FlatIdent_1BCFB = 0;
+	local v90;
+	local v91;
+	local v92;
+	while true do
+		if (FlatIdent_1BCFB == 1) then
+			v92 = nil;
+			while true do
+				local FlatIdent_27957 = 0;
+				while true do
+					if (0 == FlatIdent_27957) then
+						if (v90 == (1 - 0)) then
+							return (v91 and v92) or Color3.fromRGB(255, 768 - 513, 255);
+						end
+						if (v90 == (304 - (244 + 60))) then
+							local FlatIdent_77C29 = 0;
+							while true do
+								if (FlatIdent_77C29 == 0) then
+									if not v89 then
+										return Color3.fromRGB(197 + 58, 731 - (41 + 435), 1256 - (938 + 63));
+									end
+									v91, v92 = pcall(function()
+										if v45() then
+											return v46(v89);
+										else
+											local FlatIdent_2AC68 = 0;
+											local v364;
+											while true do
+												if (FlatIdent_2AC68 == 0) then
+													v364 = 0 + 0;
+													while true do
+														if (v364 == (1125 - (936 + 189))) then
+															local FlatIdent_5E1D0 = 0;
+															while true do
+																if (FlatIdent_5E1D0 == 0) then
+																	if (v89 == game.Players.LocalPlayer) then
+																		return Color3.fromRGB(0 + 0, 1763 - (1565 + 48), 158 + 97);
+																	end
+																	return Color3.fromRGB(1138 - (782 + 356), 522 - (176 + 91), 0 - 0);
+																end
+															end
+														end
+													end
+													break;
+												end
+											end
+										end
+									end);
+									FlatIdent_77C29 = 1;
+								end
+								if (FlatIdent_77C29 == 1) then
+									v90 = 1 - 0;
+									break;
+								end
+							end
+						end
+						break;
+					end
+				end
+			end
+			break;
+		end
+		if (FlatIdent_1BCFB == 0) then
+			v90 = 856 - (564 + 292);
+			v91 = nil;
+			FlatIdent_1BCFB = 1;
+		end
+	end
+end
+local function v48(v93, v94, v95)
+	local FlatIdent_7973C = 0;
+	local v96;
+	local v97;
+	while true do
+		if (0 == FlatIdent_7973C) then
+			v96 = 1092 - (975 + 117);
+			v97 = nil;
+			FlatIdent_7973C = 1;
+		end
+		if (FlatIdent_7973C == 1) then
+			while true do
+				local FlatIdent_1B51D = 0;
+				while true do
+					if (FlatIdent_1B51D == 1) then
+						if (v96 == 2) then
+							local FlatIdent_66799 = 0;
+							while true do
+								if (FlatIdent_66799 == 0) then
+									v97.Thickness = 6 - 4;
+									v97.Visible = true;
+									FlatIdent_66799 = 1;
+								end
+								if (FlatIdent_66799 == 1) then
+									v96 = 1021 - (697 + 321);
+									break;
+								end
+							end
+						end
+						if (v96 == (7 - 4)) then
+							return v97;
+						end
+						break;
+					end
+					if (FlatIdent_1B51D == 0) then
+						if (v96 == (1876 - (157 + 1718))) then
+							local FlatIdent_25DF3 = 0;
+							while true do
+								if (FlatIdent_25DF3 == 1) then
+									v96 = 2 + 0;
+									break;
+								end
+								if (FlatIdent_25DF3 == 0) then
+									v97.To = v94;
+									v97.Color = v95;
+									FlatIdent_25DF3 = 1;
+								end
+							end
+						end
+						if (0 == v96) then
+							v97 = Drawing.new("Line");
+							v97.From = v93;
+							v96 = 3 - 2;
+						end
+						FlatIdent_1B51D = 1;
+					end
+				end
+			end
+			break;
+		end
+	end
+end
+local function v49(v98, v99, v100)
+	local FlatIdent_8BF78 = 0;
+	local v101;
+	local v102;
+	while true do
+		if (FlatIdent_8BF78 == 0) then
+			v101 = 0 - 0;
+			v102 = nil;
+			FlatIdent_8BF78 = 1;
+		end
+		if (1 == FlatIdent_8BF78) then
+			while true do
+				local FlatIdent_27404 = 0;
+				while true do
+					if (FlatIdent_27404 == 1) then
+						if (v101 == (0 + 0)) then
+							local FlatIdent_68E92 = 0;
+							while true do
+								if (FlatIdent_68E92 == 1) then
+									v101 = 1 - 0;
+									break;
+								end
+								if (FlatIdent_68E92 == 0) then
+									v102 = Drawing.new("Text");
+									v102.Text = v98;
+									FlatIdent_68E92 = 1;
+								end
+							end
+						end
+						if (v101 == (10 - 6)) then
+							local FlatIdent_30A09 = 0;
+							while true do
+								if (FlatIdent_30A09 == 0) then
+									v102.Visible = true;
+									return v102;
+								end
+							end
+						end
+						FlatIdent_27404 = 2;
+					end
+					if (FlatIdent_27404 == 2) then
+						if (v101 == 3) then
+							local FlatIdent_61D0C = 0;
+							while true do
+								if (1 == FlatIdent_61D0C) then
+									v101 = 1193 - (449 + 740);
+									break;
+								end
+								if (0 == FlatIdent_61D0C) then
+									v102.Outline = true;
+									v102.OutlineColor = Color3.new(1227 - (322 + 905), 611 - (602 + 9), 0);
+									FlatIdent_61D0C = 1;
+								end
+							end
+						end
+						break;
+					end
+					if (FlatIdent_27404 == 0) then
+						if (v101 == 2) then
+							local FlatIdent_8D1A5 = 0;
+							while true do
+								if (0 == FlatIdent_8D1A5) then
+									v102.Size = 16;
+									v102.Center = true;
+									FlatIdent_8D1A5 = 1;
+								end
+								if (1 == FlatIdent_8D1A5) then
+									v101 = 3;
+									break;
+								end
+							end
+						end
+						if ((2 - 1) == v101) then
+							local FlatIdent_6DC53 = 0;
+							while true do
+								if (0 == FlatIdent_6DC53) then
+									v102.Position = v99;
+									v102.Color = v100;
+									FlatIdent_6DC53 = 1;
+								end
+								if (1 == FlatIdent_6DC53) then
+									v101 = 2;
+									break;
+								end
+							end
+						end
+						FlatIdent_27404 = 1;
+					end
+				end
+			end
+			break;
+		end
+	end
+end
+local function v50(v103)
+	if v19[v103] then
+		local v238 = 872 - (826 + 46);
+		while true do
+			if (v238 == (948 - (245 + 702))) then
+				local FlatIdent_7F121 = 0;
+				while true do
+					if (FlatIdent_7F121 == 0) then
+						if v19[v103].Chams then
+							local FlatIdent_29E69 = 0;
+							while true do
+								if (FlatIdent_29E69 == 0) then
+									for v431, v432 in pairs(v19[v103].Chams.Connections or {}) do
+										if v432 then
+											v432:Disconnect();
+										end
+									end
+									if v19[v103].Chams.Highlight then
+										v19[v103].Chams.Highlight:Destroy();
+									end
+									break;
+								end
+							end
+						end
+						if v19[v103].Name then
+							local FlatIdent_466B2 = 0;
+							local v399;
+							while true do
+								if (FlatIdent_466B2 == 0) then
+									v399 = 0 - 0;
+									while true do
+										if (v399 == 0) then
+											for v493, v494 in pairs(v19[v103].Name.Connections or {}) do
+												if v494 then
+													v494:Disconnect();
+												end
+											end
+											if v19[v103].Name.Label then
+												v19[v103].Name.Label:Remove();
+											end
+											break;
+										end
+									end
+									break;
+								end
+							end
+						end
+						FlatIdent_7F121 = 1;
+					end
+					if (FlatIdent_7F121 == 1) then
+						v238 = 1 + 1;
+						break;
+					end
+				end
+			end
+			if (v238 == 2) then
+				local FlatIdent_45D37 = 0;
+				while true do
+					if (FlatIdent_45D37 == 1) then
+						v238 = 3 + 0;
+						break;
+					end
+					if (FlatIdent_45D37 == 0) then
+						if v19[v103].Hitbox then
+							local FlatIdent_8EAFE = 0;
+							local v400;
+							while true do
+								if (FlatIdent_8EAFE == 0) then
+									v400 = 1898 - (260 + 1638);
+									while true do
+										if (v400 == 0) then
+											local FlatIdent_90A41 = 0;
+											while true do
+												if (FlatIdent_90A41 == 1) then
+													v400 = 441 - (382 + 58);
+													break;
+												end
+												if (FlatIdent_90A41 == 0) then
+													for v495, v496 in pairs(v19[v103].Hitbox.Connections or {}) do
+														if v496 then
+															v496:Disconnect();
+														end
+													end
+													if v19[v103].Hitbox.Adornment then
+														v19[v103].Hitbox.Adornment:Destroy();
+													end
+													FlatIdent_90A41 = 1;
+												end
+											end
+										end
+										if (v400 == (3 - 2)) then
+											if (v19[v103].Hitbox.OriginalSize and v19[v103].Hitbox.Target and v19[v103].Hitbox.Target.Parent) then
+												v19[v103].Hitbox.Target.Size = v19[v103].Hitbox.OriginalSize;
+											end
+											break;
+										end
+									end
+									break;
+								end
+							end
+						end
+						if v19[v103].Connections then
+							for v433, v434 in pairs(v19[v103].Connections) do
+								if v434 then
+									v434:Disconnect();
+								end
+							end
+						end
+						FlatIdent_45D37 = 1;
+					end
+				end
+			end
+			if (v238 == 3) then
+				v19[v103] = nil;
+				break;
+			end
+			if (v238 == (0 - 0)) then
+				local FlatIdent_5EE26 = 0;
+				while true do
+					if (FlatIdent_5EE26 == 1) then
+						v238 = 1;
+						break;
+					end
+					if (FlatIdent_5EE26 == 0) then
+						if v19[v103].Box then
+							local FlatIdent_FA88 = 0;
+							while true do
+								if (FlatIdent_FA88 == 0) then
+									for v435, v436 in pairs(v19[v103].Box.Connections or {}) do
+										if v436 then
+											v436:Disconnect();
+										end
+									end
+									for v437, v438 in pairs(v19[v103].Box.Lines or {}) do
+										if v438 then
+											v438:Remove();
+										end
+									end
+									break;
+								end
+							end
+						end
+						if v19[v103].Tracer then
+							local FlatIdent_580CB = 0;
+							local v401;
+							local v402;
+							while true do
+								if (FlatIdent_580CB == 1) then
+									while true do
+										if (v401 == 0) then
+											v402 = 1205 - (902 + 303);
+											while true do
+												if (v402 == (0 - 0)) then
+													for v529, v530 in pairs(v19[v103].Tracer.Connections or {}) do
+														if v530 then
+															v530:Disconnect();
+														end
+													end
+													if v19[v103].Tracer.Line then
+														v19[v103].Tracer.Line:Remove();
+													end
+													break;
+												end
+											end
+											break;
+										end
+									end
+									break;
+								end
+								if (FlatIdent_580CB == 0) then
+									v401 = 0 - 0;
+									v402 = nil;
+									FlatIdent_580CB = 1;
+								end
+							end
+						end
+						FlatIdent_5EE26 = 1;
+					end
+				end
+			end
+		end
+	end
+end
+local function v51(v104, v105)
+	local v106 = v47(v104);
+	if not v106 then
+		return nil;
+	end
+	local v107 = {Lines={},Connections={}};
+	local function v108()
+		if (not v105 or not v105:FindFirstChild("HumanoidRootPart") or not v105:FindFirstChildOfClass("Humanoid") or (v105:FindFirstChildOfClass("Humanoid").Health <= (0 - 0))) then
+			local FlatIdent_18D50 = 0;
+			local v274;
+			while true do
+				if (FlatIdent_18D50 == 0) then
+					v274 = 0 + 0;
+					while true do
+						if (v274 == 0) then
+							local FlatIdent_40070 = 0;
+							while true do
+								if (FlatIdent_40070 == 0) then
+									v50(v104);
+									return;
+								end
+							end
+						end
+					end
+					break;
+				end
+			end
+		end
+		if not v43(v105) then
+			local FlatIdent_80B55 = 0;
+			local v275;
+			local v276;
+			while true do
+				if (1 == FlatIdent_80B55) then
+					while true do
+						if (0 == v275) then
+							v276 = 214 - (22 + 192);
+							while true do
+								if (v276 == (683 - (483 + 200))) then
+									local FlatIdent_7E707 = 0;
+									local v459;
+									while true do
+										if (FlatIdent_7E707 == 0) then
+											v459 = 0;
+											while true do
+												if (v459 == (1463 - (1404 + 59))) then
+													local FlatIdent_32BB2 = 0;
+													while true do
+														if (FlatIdent_32BB2 == 0) then
+															v50(v104);
+															return;
+														end
+													end
+												end
+											end
+											break;
+										end
+									end
+								end
+							end
+							break;
+						end
+					end
+					break;
+				end
+				if (FlatIdent_80B55 == 0) then
+					v275 = 1690 - (1121 + 569);
+					v276 = nil;
+					FlatIdent_80B55 = 1;
+				end
+			end
+		end
+		if not v44(v105) then
+			local FlatIdent_21297 = 0;
+			local v277;
+			while true do
+				if (FlatIdent_21297 == 0) then
+					v277 = 0 - 0;
+					while true do
+						if ((0 - 0) == v277) then
+							local FlatIdent_1D19 = 0;
+							while true do
+								if (FlatIdent_1D19 == 0) then
+									for v403, v404 in pairs(v107.Lines) do
+										if v404 then
+											v404.Visible = false;
+										end
+									end
+									return;
+								end
+							end
+						end
+					end
+					break;
+				end
+			end
+		end
+		local v210 = v105.HumanoidRootPart;
+		local v211 = v210.CFrame;
+		local v212 = v105:GetExtentsSize();
+		local v213 = {(v211 * CFrame.new(v212.X / (767 - (468 + 297)), v212.Y / 2, v212.Z / (564 - (334 + 228)))),(v211 * CFrame.new(-v212.X / (6 - 4), v212.Y / 2, v212.Z / (4 - 2))),(v211 * CFrame.new(-v212.X / (1 + 1), -v212.Y / (238 - (141 + 95)), v212.Z / (2 + 0))),(v211 * CFrame.new(v212.X / 2, -v212.Y / (4 - 2), v212.Z / (1 + 1))),(v211 * CFrame.new(v212.X / (5 - 3), v212.Y / 2, -v212.Z / (2 + 0))),(v211 * CFrame.new(-v212.X / 2, v212.Y / (2 - 0), -v212.Z / (2 + 0))),(v211 * CFrame.new(-v212.X / 2, -v212.Y / 2, -v212.Z / (1 + 1))),(v211 * CFrame.new(v212.X / 2, -v212.Y / (767 - (574 + 191)), -v212.Z / 2))};
+		local v214 = {};
+		for v239, v240 in ipairs(v213) do
+			local FlatIdent_91608 = 0;
+			local v241;
+			local v242;
+			local v243;
+			while true do
+				if (FlatIdent_91608 == 1) then
+					v243 = nil;
+					while true do
+						if (v241 == (0 - 0)) then
+							v242, v243 = workspace.CurrentCamera:WorldToViewportPoint(v240.Position);
+							v214[v239] = (v243 and Vector2.new(v242.X, v242.Y)) or nil;
+							break;
+						end
+					end
+					break;
+				end
+				if (FlatIdent_91608 == 0) then
+					v241 = 0 + 0;
+					v242 = nil;
+					FlatIdent_91608 = 1;
+				end
+			end
+		end
+		local v215 = {{(850 - (254 + 595)),(2 - 0)},{(1 + 1),3},{3,(11 - 7)},{4,(1 - 0)},{(811 - (118 + 688)),(2 + 4)},{6,(739 - (16 + 716))},{7,8},{(39 - 31),(1801 - (503 + 1293))},{1,(1066 - (810 + 251))},{(2 + 0),(739 - (711 + 22))},{(1 + 2),(1 + 6)},{(1748 - (1344 + 400)),(7 + 1)}};
+		for v244, v245 in pairs(v107.Lines) do
+			if v245 then
+				v245.Visible = false;
+			end
+		end
+		local v216 = {};
+		for v246, v247 in ipairs(v215) do
+			local FlatIdent_331F0 = 0;
+			local v248;
+			local v249;
+			local v250;
+			while true do
+				if (FlatIdent_331F0 == 0) then
+					v248 = 0;
+					v249 = nil;
+					FlatIdent_331F0 = 1;
+				end
+				if (FlatIdent_331F0 == 1) then
+					v250 = nil;
+					while true do
+						if ((0 + 0) == v248) then
+							local FlatIdent_44603 = 0;
+							local v338;
+							while true do
+								if (FlatIdent_44603 == 0) then
+									v338 = 0 - 0;
+									while true do
+										if (1 == v338) then
+											v248 = 1;
+											break;
+										end
+										if ((0 - 0) == v338) then
+											local FlatIdent_175D8 = 0;
+											while true do
+												if (FlatIdent_175D8 == 0) then
+													v249 = v214[v247[1740 - (404 + 1335)]];
+													v250 = v214[v247[408 - (183 + 223)]];
+													FlatIdent_175D8 = 1;
+												end
+												if (1 == FlatIdent_175D8) then
+													v338 = 1 - 0;
+													break;
+												end
+											end
+										end
+									end
+									break;
+								end
+							end
+						end
+						if ((1 + 0) == v248) then
+							if (v249 and v250) then
+								local FlatIdent_82923 = 0;
+								local v405;
+								local v406;
+								while true do
+									if (FlatIdent_82923 == 0) then
+										v405 = 0 + 0;
+										v406 = nil;
+										FlatIdent_82923 = 1;
+									end
+									if (1 == FlatIdent_82923) then
+										while true do
+											if (v405 == (337 - (10 + 327))) then
+												local FlatIdent_357A9 = 0;
+												while true do
+													if (FlatIdent_357A9 == 1) then
+														v405 = 1 + 0;
+														break;
+													end
+													if (0 == FlatIdent_357A9) then
+														v406 = v48(v249, v250, v106);
+														v406.Visible = true;
+														FlatIdent_357A9 = 1;
+													end
+												end
+											end
+											if (v405 == 1) then
+												table.insert(v216, v406);
+												break;
+											end
+										end
+										break;
+									end
+								end
+							end
+							break;
+						end
+					end
+					break;
+				end
+			end
+		end
+		if (#v216 > 0) then
+			local FlatIdent_8638E = 0;
+			local v278;
+			while true do
+				if (FlatIdent_8638E == 0) then
+					v278 = 338 - (118 + 220);
+					while true do
+						if (0 == v278) then
+							for v407, v408 in pairs(v107.Lines) do
+								if v408 then
+									v408:Remove();
+								end
+							end
+							v107.Lines = v216;
+							break;
+						end
+					end
+					break;
+				end
+			end
+		end
+	end
+	local v109 = game:GetService("RunService").RenderStepped:Connect(v108);
+	table.insert(v107.Connections, v109);
+	return v107;
+end
+local function v52(v110, v111)
+	local v112 = v47(v110);
+	if not v112 then
+		return nil;
+	end
+	local v113 = {Line=nil,Connections={}};
+	local function v114()
+		local FlatIdent_8FBAE = 0;
+		local v217;
+		local v218;
+		local v219;
+		local v220;
+		while true do
+			if (FlatIdent_8FBAE == 0) then
+				v217 = 0 + 0;
+				v218 = nil;
+				FlatIdent_8FBAE = 1;
+			end
+			if (FlatIdent_8FBAE == 1) then
+				v219 = nil;
+				v220 = nil;
+				FlatIdent_8FBAE = 2;
+			end
+			if (FlatIdent_8FBAE == 2) then
+				while true do
+					if (v217 == (449 - (108 + 341))) then
+						local FlatIdent_7126B = 0;
+						while true do
+							if (0 == FlatIdent_7126B) then
+								if (not v111 or not v111:FindFirstChild("HumanoidRootPart") or not v111:FindFirstChildOfClass("Humanoid") or (v111:FindFirstChildOfClass("Humanoid").Health <= 0)) then
+									local FlatIdent_21CA5 = 0;
+									local v366;
+									while true do
+										if (FlatIdent_21CA5 == 0) then
+											v366 = 0;
+											while true do
+												if (v366 == 0) then
+													local FlatIdent_7517F = 0;
+													while true do
+														if (0 == FlatIdent_7517F) then
+															v50(v110);
+															return;
+														end
+													end
+												end
+											end
+											break;
+										end
+									end
+								end
+								if not v43(v111) then
+									local FlatIdent_43BEE = 0;
+									while true do
+										if (0 == FlatIdent_43BEE) then
+											v50(v110);
+											return;
+										end
+									end
+								end
+								FlatIdent_7126B = 1;
+							end
+							if (FlatIdent_7126B == 1) then
+								v217 = 1 + 0;
+								break;
+							end
+						end
+					end
+					if (v217 == (4 - 3)) then
+						local FlatIdent_2BE68 = 0;
+						while true do
+							if (FlatIdent_2BE68 == 0) then
+								if not v44(v111) then
+									local FlatIdent_2FBBD = 0;
+									local v367;
+									while true do
+										if (0 == FlatIdent_2FBBD) then
+											v367 = 1493 - (711 + 782);
+											while true do
+												if ((0 - 0) == v367) then
+													local FlatIdent_90113 = 0;
+													local v461;
+													while true do
+														if (FlatIdent_90113 == 0) then
+															v461 = 0;
+															while true do
+																if (v461 == (469 - (270 + 199))) then
+																	local FlatIdent_67F21 = 0;
+																	while true do
+																		if (FlatIdent_67F21 == 0) then
+																			if v113.Line then
+																				v113.Line.Visible = false;
+																			end
+																			return;
+																		end
+																	end
+																end
+															end
+															break;
+														end
+													end
+												end
+											end
+											break;
+										end
+									end
+								end
+								v218 = v111.HumanoidRootPart;
+								FlatIdent_2BE68 = 1;
+							end
+							if (FlatIdent_2BE68 == 1) then
+								v217 = 2;
+								break;
+							end
+						end
+					end
+					if (v217 == (1 + 1)) then
+						v219, v220 = workspace.CurrentCamera:WorldToViewportPoint(v218.Position);
+						if v220 then
+							local FlatIdent_5AA23 = 0;
+							local v368;
+							local v369;
+							while true do
+								if (FlatIdent_5AA23 == 0) then
+									v368 = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y);
+									v369 = Vector2.new(v219.X, v219.Y);
+									FlatIdent_5AA23 = 1;
+								end
+								if (FlatIdent_5AA23 == 1) then
+									if not v113.Line then
+										v113.Line = v48(v368, v369, v112);
+									else
+										local FlatIdent_3F15E = 0;
+										local v442;
+										while true do
+											if (FlatIdent_3F15E == 0) then
+												v442 = 0;
+												while true do
+													if (0 == v442) then
+														local FlatIdent_56F59 = 0;
+														while true do
+															if (FlatIdent_56F59 == 0) then
+																v113.Line.From = v368;
+																v113.Line.To = v369;
+																FlatIdent_56F59 = 1;
+															end
+															if (1 == FlatIdent_56F59) then
+																v442 = 1820 - (580 + 1239);
+																break;
+															end
+														end
+													end
+													if (v442 == (2 - 1)) then
+														v113.Line.Visible = true;
+														break;
+													end
+												end
+												break;
+											end
+										end
+									end
+									break;
+								end
+							end
+						elseif v113.Line then
+							v113.Line.Visible = false;
+						end
+						break;
+					end
+				end
+				break;
+			end
+		end
+	end
+	local v115 = game:GetService("RunService").RenderStepped:Connect(v114);
+	table.insert(v113.Connections, v115);
+	return v113;
+end
+local function v53(v116, v117)
+	local v118 = v47(v116);
+	if not v118 then
+		return nil;
+	end
+	local v119 = {Highlight=nil,Connections={}};
+	local function v120()
+		local v221 = 0 + 0;
+		while true do
+			if (v221 == (0 + 0)) then
+				local FlatIdent_1BB5D = 0;
+				while true do
+					if (FlatIdent_1BB5D == 1) then
+						v221 = 1;
+						break;
+					end
+					if (FlatIdent_1BB5D == 0) then
+						if (not v117 or not v117:FindFirstChild("HumanoidRootPart") or not v117:FindFirstChildOfClass("Humanoid") or (v117:FindFirstChildOfClass("Humanoid").Health <= 0)) then
+							local FlatIdent_13B77 = 0;
+							local v370;
+							local v371;
+							while true do
+								if (0 == FlatIdent_13B77) then
+									v370 = 0 + 0;
+									v371 = nil;
+									FlatIdent_13B77 = 1;
+								end
+								if (FlatIdent_13B77 == 1) then
+									while true do
+										if (v370 == (0 - 0)) then
+											v371 = 0 + 0;
+											while true do
+												if (v371 == (1167 - (645 + 522))) then
+													local FlatIdent_98327 = 0;
+													while true do
+														if (FlatIdent_98327 == 0) then
+															v50(v116);
+															return;
+														end
+													end
+												end
+											end
+											break;
+										end
+									end
+									break;
+								end
+							end
+						end
+						if not v43(v117) then
+							local FlatIdent_77529 = 0;
+							local v372;
+							while true do
+								if (0 == FlatIdent_77529) then
+									v372 = 0;
+									while true do
+										if (v372 == (1790 - (1010 + 780))) then
+											v50(v116);
+											return;
+										end
+									end
+									break;
+								end
+							end
+						end
+						FlatIdent_1BB5D = 1;
+					end
+				end
+			end
+			if (v221 == (1 + 0)) then
+				if not v119.Highlight then
+					local FlatIdent_90E07 = 0;
+					while true do
+						if (FlatIdent_90E07 == 0) then
+							v119.Highlight = Instance.new("Highlight");
+							v119.Highlight.FillColor = v118;
+							FlatIdent_90E07 = 1;
+						end
+						if (FlatIdent_90E07 == 1) then
+							v119.Highlight.OutlineColor = v118;
+							v119.Highlight.FillTransparency = 0.5 - 0;
+							FlatIdent_90E07 = 2;
+						end
+						if (FlatIdent_90E07 == 2) then
+							v119.Highlight.OutlineTransparency = 0 - 0;
+							v119.Highlight.Parent = v117;
+							break;
+						end
+					end
+				else
+					local FlatIdent_4AB8B = 0;
+					local v379;
+					local v380;
+					while true do
+						if (FlatIdent_4AB8B == 1) then
+							while true do
+								if (v379 == (0 - 0)) then
+									v380 = 0;
+									while true do
+										if (v380 == (0 - 0)) then
+											local FlatIdent_52EE1 = 0;
+											while true do
+												if (FlatIdent_52EE1 == 0) then
+													v119.Highlight.FillColor = v118;
+													v119.Highlight.OutlineColor = v118;
+													FlatIdent_52EE1 = 1;
+												end
+												if (FlatIdent_52EE1 == 1) then
+													v380 = 506 - (351 + 154);
+													break;
+												end
+											end
+										end
+										if (v380 == (1575 - (1281 + 293))) then
+											v119.Highlight.Enabled = true;
+											break;
+										end
+									end
+									break;
+								end
+							end
+							break;
+						end
+						if (FlatIdent_4AB8B == 0) then
+							v379 = 1836 - (1045 + 791);
+							v380 = nil;
+							FlatIdent_4AB8B = 1;
+						end
+					end
+				end
+				break;
+			end
+		end
+	end
+	local function v121()
+		local v222 = 266 - (28 + 238);
+		while true do
+			if (v222 == 0) then
+				local FlatIdent_7D2DA = 0;
+				while true do
+					if (FlatIdent_7D2DA == 0) then
+						if (not v117 or not v117.Parent) then
+							local FlatIdent_35D0A = 0;
+							while true do
+								if (FlatIdent_35D0A == 0) then
+									v50(v116);
+									return;
+								end
+							end
+						end
+						if not v44(v117) then
+							local FlatIdent_2C7C4 = 0;
+							local v381;
+							while true do
+								if (FlatIdent_2C7C4 == 0) then
+									v381 = 0 - 0;
+									while true do
+										if (v381 == (1559 - (1381 + 178))) then
+											local FlatIdent_8239F = 0;
+											while true do
+												if (0 == FlatIdent_8239F) then
+													if v119.Highlight then
+														v119.Highlight.Enabled = false;
+													end
+													return;
+												end
+											end
+										end
+									end
+									break;
+								end
+							end
+						end
+						FlatIdent_7D2DA = 1;
+					end
+					if (FlatIdent_7D2DA == 1) then
+						v222 = 1 + 0;
+						break;
+					end
+				end
+			end
+			if (v222 == (1 + 0)) then
+				v120();
+				break;
+			end
+		end
+	end
+	v120();
+	local v122 = game:GetService("RunService").RenderStepped:Connect(v121);
+	table.insert(v119.Connections, v122);
+	return v119;
+end
+local function v54(v123, v124)
+	local v125 = v47(v123);
+	if not v125 then
+		return nil;
+	end
+	local v126 = {Label=nil,Connections={}};
+	local function v127()
+		local FlatIdent_4D11E = 0;
+		local v223;
+		local v224;
+		local v225;
+		local v226;
+		while true do
+			if (FlatIdent_4D11E == 0) then
+				v223 = 0 + 0;
+				v224 = nil;
+				FlatIdent_4D11E = 1;
+			end
+			if (FlatIdent_4D11E == 2) then
+				while true do
+					if (v223 == 0) then
+						local FlatIdent_740DC = 0;
+						while true do
+							if (FlatIdent_740DC == 1) then
+								v223 = 1 - 0;
+								break;
+							end
+							if (FlatIdent_740DC == 0) then
+								if (not v124 or not v124:FindFirstChild("HumanoidRootPart") or not v124:FindFirstChildOfClass("Humanoid") or (v124:FindFirstChildOfClass("Humanoid").Health <= 0)) then
+									local FlatIdent_78A9D = 0;
+									local v382;
+									while true do
+										if (FlatIdent_78A9D == 0) then
+											v382 = 0;
+											while true do
+												if (v382 == (0 - 0)) then
+													local FlatIdent_35C62 = 0;
+													while true do
+														if (FlatIdent_35C62 == 0) then
+															v50(v123);
+															return;
+														end
+													end
+												end
+											end
+											break;
+										end
+									end
+								end
+								if not v43(v124) then
+									local FlatIdent_2A71E = 0;
+									local v383;
+									local v384;
+									while true do
+										if (FlatIdent_2A71E == 0) then
+											v383 = 0 + 0;
+											v384 = nil;
+											FlatIdent_2A71E = 1;
+										end
+										if (FlatIdent_2A71E == 1) then
+											while true do
+												if ((470 - (381 + 89)) == v383) then
+													v384 = 0 + 0;
+													while true do
+														if (v384 == (0 + 0)) then
+															local FlatIdent_439F3 = 0;
+															local v511;
+															while true do
+																if (FlatIdent_439F3 == 0) then
+																	v511 = 0;
+																	while true do
+																		if (v511 == 0) then
+																			v50(v123);
+																			return;
+																		end
+																	end
+																	break;
+																end
+															end
+														end
+													end
+													break;
+												end
+											end
+											break;
+										end
+									end
+								end
+								FlatIdent_740DC = 1;
+							end
+						end
+					end
+					if (v223 == (1157 - (1074 + 82))) then
+						local FlatIdent_559FF = 0;
+						while true do
+							if (FlatIdent_559FF == 0) then
+								if not v44(v124) then
+									local FlatIdent_FBDE = 0;
+									local v385;
+									while true do
+										if (FlatIdent_FBDE == 0) then
+											v385 = 0 - 0;
+											while true do
+												if (v385 == (1784 - (214 + 1570))) then
+													local FlatIdent_7993F = 0;
+													while true do
+														if (FlatIdent_7993F == 0) then
+															if v126.Label then
+																v126.Label.Visible = false;
+															end
+															return;
+														end
+													end
+												end
+											end
+											break;
+										end
+									end
+								end
+								v224 = v124.HumanoidRootPart;
+								FlatIdent_559FF = 1;
+							end
+							if (FlatIdent_559FF == 1) then
+								v223 = 1457 - (990 + 465);
+								break;
+							end
+						end
+					end
+					if (v223 == (1 + 1)) then
+						v225, v226 = workspace.CurrentCamera:WorldToViewportPoint(v224.Position);
+						if v226 then
+							local FlatIdent_47EEF = 0;
+							local v386;
+							local v387;
+							while true do
+								if (FlatIdent_47EEF == 1) then
+									while true do
+										if (v386 == 0) then
+											v387 = Vector2.new(v225.X, v225.Y - (18 + 22));
+											if not v126.Label then
+												v126.Label = v49(v123.Name, v387, v125);
+											else
+												local FlatIdent_59859 = 0;
+												local v503;
+												while true do
+													if (FlatIdent_59859 == 0) then
+														v503 = 0;
+														while true do
+															if (v503 == (0 + 0)) then
+																local FlatIdent_12E4E = 0;
+																while true do
+																	if (1 == FlatIdent_12E4E) then
+																		v503 = 3 - 2;
+																		break;
+																	end
+																	if (0 == FlatIdent_12E4E) then
+																		v126.Label.Position = v387;
+																		v126.Label.Color = v125;
+																		FlatIdent_12E4E = 1;
+																	end
+																end
+															end
+															if (v503 == 1) then
+																v126.Label.Visible = true;
+																break;
+															end
+														end
+														break;
+													end
+												end
+											end
+											break;
+										end
+									end
+									break;
+								end
+								if (FlatIdent_47EEF == 0) then
+									v386 = 0;
+									v387 = nil;
+									FlatIdent_47EEF = 1;
+								end
+							end
+						elseif v126.Label then
+							v126.Label.Visible = false;
+						end
+						break;
+					end
+				end
+				break;
+			end
+			if (FlatIdent_4D11E == 1) then
+				v225 = nil;
+				v226 = nil;
+				FlatIdent_4D11E = 2;
+			end
+		end
+	end
+	local v128 = game:GetService("RunService").RenderStepped:Connect(v127);
+	table.insert(v126.Connections, v128);
+	return v126;
+end
+local function v55(v129, v130)
+	local v131 = v47(v129);
+	if not v131 then
+		return nil;
+	end
+	local v132 = {Adornment=nil,Target=nil,OriginalSize=nil,Connections={}};
+	local function v133()
+		local FlatIdent_1B5ED = 0;
+		local v227;
+		local v228;
+		while true do
+			if (FlatIdent_1B5ED == 2) then
+				if not v132.OriginalSize then
+					local FlatIdent_5013F = 0;
+					while true do
+						if (0 == FlatIdent_5013F) then
+							v132.OriginalSize = v227.Size;
+							v132.Target = v227;
+							break;
+						end
+					end
+				end
+				v228 = Vector3.new(v20, v20, v20);
+				FlatIdent_1B5ED = 3;
+			end
+			if (FlatIdent_1B5ED == 0) then
+				if (not v130 or not v130:FindFirstChild("HumanoidRootPart") or not v130:FindFirstChildOfClass("Humanoid") or (v130:FindFirstChildOfClass("Humanoid").Health <= 0)) then
+					v50(v129);
+					return;
+				end
+				if not v43(v130) then
+					local FlatIdent_280F1 = 0;
+					local v279;
+					while true do
+						if (FlatIdent_280F1 == 0) then
+							v279 = 1726 - (1668 + 58);
+							while true do
+								if (v279 == 0) then
+									local FlatIdent_95507 = 0;
+									while true do
+										if (FlatIdent_95507 == 0) then
+											v50(v129);
+											return;
+										end
+									end
+								end
+							end
+							break;
+						end
+					end
+				end
+				FlatIdent_1B5ED = 1;
+			end
+			if (FlatIdent_1B5ED == 1) then
+				v227 = v130:FindFirstChild("HumanoidRootPart");
+				if not v227 then
+					local FlatIdent_1FF3C = 0;
+					local v280;
+					while true do
+						if (FlatIdent_1FF3C == 0) then
+							v280 = 626 - (512 + 114);
+							while true do
+								if (v280 == (0 - 0)) then
+									local FlatIdent_12B71 = 0;
+									while true do
+										if (FlatIdent_12B71 == 0) then
+											v50(v129);
+											return;
+										end
+									end
+								end
+							end
+							break;
+						end
+					end
+				end
+				FlatIdent_1B5ED = 2;
+			end
+			if (FlatIdent_1B5ED == 3) then
+				v227.Size = v228;
+				if not v132.Adornment then
+					local FlatIdent_245AA = 0;
+					while true do
+						if (0 == FlatIdent_245AA) then
+							v132.Adornment = Instance.new("BoxHandleAdornment");
+							v132.Adornment.Adornee = v227;
+							FlatIdent_245AA = 1;
+						end
+						if (3 == FlatIdent_245AA) then
+							v132.Adornment.Transparency = 0.7 - 0;
+							v132.Adornment.Parent = game:GetService("CoreGui");
+							break;
+						end
+						if (FlatIdent_245AA == 1) then
+							v132.Adornment.AlwaysOnTop = true;
+							v132.Adornment.ZIndex = 20 - 10;
+							FlatIdent_245AA = 2;
+						end
+						if (2 == FlatIdent_245AA) then
+							v132.Adornment.Size = v228;
+							v132.Adornment.Color3 = v131;
+							FlatIdent_245AA = 3;
+						end
+					end
+				else
+					local FlatIdent_57669 = 0;
+					local v292;
+					while true do
+						if (FlatIdent_57669 == 0) then
+							v292 = 0;
+							while true do
+								if (v292 == (1 + 0)) then
+									v132.Adornment.Adornee = v227;
+									break;
+								end
+								if (v292 == (0 + 0)) then
+									local FlatIdent_89C1C = 0;
+									while true do
+										if (FlatIdent_89C1C == 1) then
+											v292 = 1 + 0;
+											break;
+										end
+										if (FlatIdent_89C1C == 0) then
+											v132.Adornment.Size = v228;
+											v132.Adornment.Color3 = v131;
+											FlatIdent_89C1C = 1;
+										end
+									end
+								end
+							end
+							break;
+						end
+					end
+				end
+				break;
+			end
+		end
+	end
+	local function v134()
+		local FlatIdent_59C45 = 0;
+		local v230;
+		local v231;
+		while true do
+			if (FlatIdent_59C45 == 1) then
+				while true do
+					if (v230 == (1994 - (109 + 1885))) then
+						v231 = 1469 - (1269 + 200);
+						while true do
+							if (v231 == (1 - 0)) then
+								v133();
+								break;
+							end
+							if (v231 == (815 - (98 + 717))) then
+								local FlatIdent_8E3FD = 0;
+								while true do
+									if (1 == FlatIdent_8E3FD) then
+										v231 = 827 - (802 + 24);
+										break;
+									end
+									if (FlatIdent_8E3FD == 0) then
+										if (not v130 or not v130.Parent) then
+											local FlatIdent_62CB4 = 0;
+											local v462;
+											while true do
+												if (FlatIdent_62CB4 == 0) then
+													v462 = 0;
+													while true do
+														if (v462 == 0) then
+															local FlatIdent_6840A = 0;
+															while true do
+																if (0 == FlatIdent_6840A) then
+																	v50(v129);
+																	return;
+																end
+															end
+														end
+													end
+													break;
+												end
+											end
+										end
+										if not v44(v130) then
+											local FlatIdent_8C1D5 = 0;
+											while true do
+												if (FlatIdent_8C1D5 == 0) then
+													if v132.Adornment then
+														v132.Adornment.Adornee = nil;
+													end
+													return;
+												end
+											end
+										end
+										FlatIdent_8E3FD = 1;
+									end
+								end
+							end
+						end
+						break;
+					end
+				end
+				break;
+			end
+			if (FlatIdent_59C45 == 0) then
+				v230 = 0 - 0;
+				v231 = nil;
+				FlatIdent_59C45 = 1;
+			end
+		end
+	end
+	v133();
+	local v135 = game:GetService("RunService").RenderStepped:Connect(v134);
+	table.insert(v132.Connections, v135);
+	return v132;
+end
+local function v56(v136, v137)
+	local FlatIdent_511F5 = 0;
+	while true do
+		if (FlatIdent_511F5 == 1) then
+			if (v137 and (v6 or v7 or v8 or v9 or v10)) then
+				local v251 = 0 - 0;
+				local v252;
+				local v253;
+				while true do
+					if (v251 == (0 - 0)) then
+						local FlatIdent_26896 = 0;
+						while true do
+							if (FlatIdent_26896 == 1) then
+								v251 = 1;
+								break;
+							end
+							if (FlatIdent_26896 == 0) then
+								v252 = v136.Character;
+								if (v252 and v43(v252)) then
+									local FlatIdent_8EF6C = 0;
+									local v409;
+									local v410;
+									local v411;
+									local v412;
+									local v413;
+									local v414;
+									local v415;
+									while true do
+										if (FlatIdent_8EF6C == 3) then
+											table.insert(v414, v252.AncestryChanged:Connect(function(v445, v446)
+												if not v446 then
+													v50(v136);
+												end
+											end));
+											v19[v136] = {Box=v409,Tracer=v410,Chams=v411,Name=v412,Hitbox=v413,Connections=v414};
+											break;
+										end
+										if (FlatIdent_8EF6C == 1) then
+											if v8 then
+												v411 = v53(v136, v252);
+											end
+											if v9 then
+												v412 = v54(v136, v252);
+											end
+											if v10 then
+												v413 = v55(v136, v252);
+											end
+											FlatIdent_8EF6C = 2;
+										end
+										if (FlatIdent_8EF6C == 2) then
+											v414 = {};
+											v415 = v252:FindFirstChildOfClass("Humanoid");
+											if v415 then
+												table.insert(v414, v415.Died:Connect(function()
+													v50(v136);
+												end));
+											end
+											FlatIdent_8EF6C = 3;
+										end
+										if (FlatIdent_8EF6C == 0) then
+											v409, v410, v411, v412, v413 = nil, nil, nil, nil, nil;
+											if v6 then
+												v409 = v51(v136, v252);
+											end
+											if v7 then
+												v410 = v52(v136, v252);
+											end
+											FlatIdent_8EF6C = 1;
+										end
+									end
+								end
+								FlatIdent_26896 = 1;
+							end
+						end
+					end
+					if (v251 == (1 + 0)) then
+						v253 = v136.CharacterAdded:Connect(function(v391)
+							local FlatIdent_458D1 = 0;
+							while true do
+								if (FlatIdent_458D1 == 0) then
+									wait(0.5);
+									if ((v6 or v7 or v8 or v9 or v10) and v43(v391)) then
+										local FlatIdent_21387 = 0;
+										local v447;
+										local v448;
+										local v449;
+										local v450;
+										local v451;
+										local v452;
+										local v453;
+										local v454;
+										while true do
+											if (FlatIdent_21387 == 0) then
+												v447 = 0;
+												v448 = nil;
+												FlatIdent_21387 = 1;
+											end
+											if (FlatIdent_21387 == 1) then
+												v449 = nil;
+												v450 = nil;
+												FlatIdent_21387 = 2;
+											end
+											if (FlatIdent_21387 == 4) then
+												while true do
+													if (v447 == (1 + 0)) then
+														local FlatIdent_25061 = 0;
+														while true do
+															if (FlatIdent_25061 == 2) then
+																v447 = 1 + 1;
+																break;
+															end
+															if (FlatIdent_25061 == 1) then
+																if v10 then
+																	v452 = v55(v136, v391);
+																end
+																v453 = {};
+																FlatIdent_25061 = 2;
+															end
+															if (FlatIdent_25061 == 0) then
+																if v8 then
+																	v450 = v53(v136, v391);
+																end
+																if v9 then
+																	v451 = v54(v136, v391);
+																end
+																FlatIdent_25061 = 1;
+															end
+														end
+													end
+													if ((0 + 0) == v447) then
+														local FlatIdent_25747 = 0;
+														while true do
+															if (FlatIdent_25747 == 2) then
+																v447 = 2 - 1;
+																break;
+															end
+															if (FlatIdent_25747 == 0) then
+																v50(v136);
+																v448, v449, v450, v451, v452 = nil, nil, nil, nil, nil;
+																FlatIdent_25747 = 1;
+															end
+															if (FlatIdent_25747 == 1) then
+																if v6 then
+																	v448 = v51(v136, v391);
+																end
+																if v7 then
+																	v449 = v52(v136, v391);
+																end
+																FlatIdent_25747 = 2;
+															end
+														end
+													end
+													if (2 == v447) then
+														v454 = v391:FindFirstChildOfClass("Humanoid");
+														if v454 then
+															table.insert(v453, v454.Died:Connect(function()
+																v50(v136);
+															end));
+														end
+														table.insert(v453, v391.AncestryChanged:Connect(function(v512, v513)
+															if not v513 then
+																v50(v136);
+															end
+														end));
+														v19[v136] = {Box=v448,Tracer=v449,Chams=v450,Name=v451,Hitbox=v452,Connections=v453};
+														break;
+													end
+												end
+												break;
+											end
+											if (FlatIdent_21387 == 2) then
+												v451 = nil;
+												v452 = nil;
+												FlatIdent_21387 = 3;
+											end
+											if (FlatIdent_21387 == 3) then
+												v453 = nil;
+												v454 = nil;
+												FlatIdent_21387 = 4;
+											end
+										end
+									end
+									break;
+								end
+							end
+						end);
+						if (v19[v136] and v19[v136].Connections) then
+							table.insert(v19[v136].Connections, v253);
+						end
+						break;
+					end
+				end
+			end
+			break;
+		end
+		if (0 == FlatIdent_511F5) then
+			if not v136 then
+				return;
+			end
+			v50(v136);
+			FlatIdent_511F5 = 1;
+		end
+	end
+end
+local function v57()
+	local v138 = 0;
+	while true do
+		if (v138 == 0) then
+			if v40 then
+				v40:Disconnect();
+			end
+			v40 = game:GetService("RunService").Heartbeat:Connect(function()
+				local FlatIdent_354BC = 0;
+				local v319;
+				local v320;
+				while true do
+					if (FlatIdent_354BC == 1) then
+						while true do
+							if (v319 == (0 + 0)) then
+								v320 = tick();
+								if ((v320 - v41) >= v42) then
+									local v463 = 0 + 0;
+									while true do
+										if (v463 == 0) then
+											v41 = v320;
+											for v518, v519 in pairs(game.Players:GetPlayers()) do
+												local FlatIdent_252D3 = 0;
+												local v520;
+												local v521;
+												local v522;
+												local v523;
+												while true do
+													if (1 == FlatIdent_252D3) then
+														v522 = nil;
+														v523 = nil;
+														FlatIdent_252D3 = 2;
+													end
+													if (0 == FlatIdent_252D3) then
+														v520 = 0 + 0;
+														v521 = nil;
+														FlatIdent_252D3 = 1;
+													end
+													if (FlatIdent_252D3 == 2) then
+														while true do
+															if (v520 == 0) then
+																local FlatIdent_28E8A = 0;
+																local v539;
+																while true do
+																	if (FlatIdent_28E8A == 0) then
+																		v539 = 0 + 0;
+																		while true do
+																			if (v539 == (0 + 0)) then
+																				v521 = v6 or v7 or v8 or v9 or v10;
+																				v522 = v19[v519] ~= nil;
+																				v539 = 1;
+																			end
+																			if (v539 == (1434 - (797 + 636))) then
+																				v520 = 4 - 3;
+																				break;
+																			end
+																		end
+																		break;
+																	end
+																end
+															end
+															if (v520 == (1620 - (1427 + 192))) then
+																v523 = v519.Character;
+																if (v521 and not v522 and v523 and v43(v523)) then
+																	v56(v519, true);
+																elseif (not v521 and v522) then
+																	v50(v519);
+																elseif (v521 and v522 and v523 and v43(v523)) then
+																	local FlatIdent_6FF03 = 0;
+																	local v542;
+																	local v543;
+																	while true do
+																		if (FlatIdent_6FF03 == 0) then
+																			v542 = 0 + 0;
+																			v543 = nil;
+																			FlatIdent_6FF03 = 1;
+																		end
+																		if (FlatIdent_6FF03 == 1) then
+																			while true do
+																				if (v542 == (0 - 0)) then
+																					v543 = v19[v519];
+																					if v543 then
+																						if ((v6 and not v543.Box) or (v7 and not v543.Tracer) or (v8 and not v543.Chams) or (v9 and not v543.Name) or (v10 and not v543.Hitbox)) then
+																							local FlatIdent_7C89 = 0;
+																							local v545;
+																							while true do
+																								if (FlatIdent_7C89 == 0) then
+																									v545 = 0 + 0;
+																									while true do
+																										if (v545 == 0) then
+																											v50(v519);
+																											v56(v519, true);
+																											break;
+																										end
+																									end
+																									break;
+																								end
+																							end
+																						end
+																					end
+																					break;
+																				end
+																			end
+																			break;
+																		end
+																	end
+																end
+																break;
+															end
+														end
+														break;
+													end
+												end
+											end
+											break;
+										end
+									end
+								end
+								break;
+							end
+						end
+						break;
+					end
+					if (0 == FlatIdent_354BC) then
+						v319 = 0 - 0;
+						v320 = nil;
+						FlatIdent_354BC = 1;
+					end
+				end
+			end);
+			break;
+		end
+	end
+end
+local function v58()
+	for v232, v233 in pairs(game.Players:GetPlayers()) do
+		v56(v233, true);
+	end
+end
+local function v59()
+	local v139 = 0 + 0;
+	local v140;
+	local v141;
+	while true do
+		if (v139 == (327 - (192 + 134))) then
+			v141 = v140:FindFirstChild("HumanoidRootPart");
+			if not v141 then
+				return;
+			end
+			v139 = 1278 - (316 + 960);
+		end
+		if (v139 == (2 + 0)) then
+			if v18 then
+				if not v35 then
+					local FlatIdent_2DACE = 0;
+					local v417;
+					while true do
+						if (FlatIdent_2DACE == 0) then
+							v417 = 0 + 0;
+							while true do
+								if (v417 == 2) then
+									local FlatIdent_936D7 = 0;
+									while true do
+										if (FlatIdent_936D7 == 1) then
+											v417 = 3;
+											break;
+										end
+										if (FlatIdent_936D7 == 0) then
+											v35.Color3 = Color3.new(1 + 0, 3 - 2, 1);
+											v35.Size = Vector3.new(v21, v21, v21);
+											FlatIdent_936D7 = 1;
+										end
+									end
+								end
+								if (v417 == (551 - (83 + 468))) then
+									local FlatIdent_3BBAF = 0;
+									while true do
+										if (0 == FlatIdent_3BBAF) then
+											v35 = Instance.new("BoxHandleAdornment");
+											v35.AlwaysOnTop = true;
+											FlatIdent_3BBAF = 1;
+										end
+										if (FlatIdent_3BBAF == 1) then
+											v417 = 1;
+											break;
+										end
+									end
+								end
+								if (v417 == 3) then
+									v35.Adornee = v141;
+									v35.Parent = game:GetService("CoreGui");
+									break;
+								end
+								if ((1807 - (1202 + 604)) == v417) then
+									local FlatIdent_4185D = 0;
+									while true do
+										if (FlatIdent_4185D == 0) then
+											v35.ZIndex = 0;
+											v35.Transparency = 4 - 3;
+											FlatIdent_4185D = 1;
+										end
+										if (FlatIdent_4185D == 1) then
+											v417 = 2;
+											break;
+										end
+									end
+								end
+							end
+							break;
+						end
+					end
+				else
+					local FlatIdent_1C6AE = 0;
+					local v418;
+					local v419;
+					while true do
+						if (FlatIdent_1C6AE == 1) then
+							while true do
+								if ((0 - 0) == v418) then
+									v419 = 0 - 0;
+									while true do
+										if (v419 == (325 - (45 + 280))) then
+											v35.Size = Vector3.new(v21, v21, v21);
+											v35.Adornee = v141;
+											break;
+										end
+									end
+									break;
+								end
+							end
+							break;
+						end
+						if (FlatIdent_1C6AE == 0) then
+							v418 = 0;
+							v419 = nil;
+							FlatIdent_1C6AE = 1;
+						end
+					end
+				end
+			elseif v35 then
+				local FlatIdent_47ADC = 0;
+				local v420;
+				while true do
+					if (0 == FlatIdent_47ADC) then
+						v420 = 0;
+						while true do
+							if (0 == v420) then
+								v35:Destroy();
+								v35 = nil;
+								break;
+							end
+						end
+						break;
+					end
+				end
+			end
+			break;
+		end
+		if (0 == v139) then
+			local FlatIdent_2FC50 = 0;
+			while true do
+				if (FlatIdent_2FC50 == 0) then
+					v140 = game.Players.LocalPlayer.Character;
+					if not v140 then
+						return;
+					end
+					FlatIdent_2FC50 = 1;
+				end
+				if (FlatIdent_2FC50 == 1) then
+					v139 = 1;
+					break;
+				end
+			end
+		end
+	end
+end
+local function v60()
+	local FlatIdent_5F7B5 = 0;
+	while true do
+		if (0 == FlatIdent_5F7B5) then
+			if v36 then
+				v36:Disconnect();
+			end
+			v36 = game:GetService("RunService").RenderStepped:Connect(function()
+				if v18 then
+					local FlatIdent_6CF78 = 0;
+					local v294;
+					local v295;
+					while true do
+						if (FlatIdent_6CF78 == 0) then
+							v294 = 0 + 0;
+							v295 = nil;
+							FlatIdent_6CF78 = 1;
+						end
+						if (FlatIdent_6CF78 == 1) then
+							while true do
+								if (v294 == 0) then
+									v295 = game.Players.LocalPlayer.Character;
+									if (v295 and v295:FindFirstChild("HumanoidRootPart")) then
+										if v35 then
+											local FlatIdent_97F0B = 0;
+											local v488;
+											while true do
+												if (FlatIdent_97F0B == 0) then
+													v488 = 0 + 0;
+													while true do
+														if ((0 + 0) == v488) then
+															v35.Adornee = v295.HumanoidRootPart;
+															v35.Size = Vector3.new(v21, v21, v21);
+															break;
+														end
+													end
+													break;
+												end
+											end
+										end
+									end
+									break;
+								end
+							end
+							break;
+						end
+					end
+				end
+			end);
+			break;
+		end
+	end
+end
+local function v61()
+	local FlatIdent_9128B = 0;
+	while true do
+		if (FlatIdent_9128B == 0) then
+			v18 = not v18;
+			if v18 then
+				local FlatIdent_580B8 = 0;
+				while true do
+					if (FlatIdent_580B8 == 0) then
+						v60();
+						v59();
+						break;
+					end
+				end
+			else
+				local FlatIdent_3BCF7 = 0;
+				local v254;
+				local v255;
+				while true do
+					if (1 == FlatIdent_3BCF7) then
+						while true do
+							if (v254 == 0) then
+								v255 = 0 + 0;
+								while true do
+									if (v255 == (0 - 0)) then
+										if v36 then
+											local FlatIdent_643B6 = 0;
+											local v489;
+											while true do
+												if (FlatIdent_643B6 == 0) then
+													v489 = 1911 - (340 + 1571);
+													while true do
+														if (v489 == 0) then
+															v36:Disconnect();
+															v36 = nil;
+															break;
+														end
+													end
+													break;
+												end
+											end
+										end
+										if v35 then
+											local FlatIdent_8DBF2 = 0;
+											local v490;
+											while true do
+												if (FlatIdent_8DBF2 == 0) then
+													v490 = 0 + 0;
+													while true do
+														if ((1772 - (1733 + 39)) == v490) then
+															v35:Destroy();
+															v35 = nil;
+															break;
+														end
+													end
+													break;
+												end
+											end
+										end
+										break;
+									end
+								end
+								break;
+							end
+						end
+						break;
+					end
+					if (FlatIdent_3BCF7 == 0) then
+						v254 = 0 + 0;
+						v255 = nil;
+						FlatIdent_3BCF7 = 1;
+					end
+				end
+			end
+			break;
+		end
+	end
+end
+local function v62()
+	local v142 = 0 - 0;
+	while true do
+		if (v142 == 0) then
+			local FlatIdent_69531 = 0;
+			while true do
+				if (FlatIdent_69531 == 0) then
+					if v30 then
+						v30:Disconnect();
+					end
+					if (v25 == nil) then
+						local FlatIdent_6873F = 0;
+						local v340;
+						local v341;
+						while true do
+							if (FlatIdent_6873F == 1) then
+								while true do
+									if ((1034 - (125 + 909)) == v340) then
+										v341 = game.Players.LocalPlayer.Character;
+										if (v341 and v341:FindFirstChildOfClass("Humanoid")) then
+											v25 = v341:FindFirstChildOfClass("Humanoid").WalkSpeed;
+										else
+											v25 = 16;
+										end
+										break;
+									end
+								end
+								break;
+							end
+							if (FlatIdent_6873F == 0) then
+								v340 = 0;
+								v341 = nil;
+								FlatIdent_6873F = 1;
+							end
+						end
+					end
+					FlatIdent_69531 = 1;
+				end
+				if (FlatIdent_69531 == 1) then
+					v142 = 1;
+					break;
+				end
+			end
+		end
+		if ((1949 - (1096 + 852)) == v142) then
+			v30 = game:GetService("RunService").RenderStepped:Connect(function()
+				local FlatIdent_2D05E = 0;
+				local v321;
+				local v322;
+				while true do
+					if (1 == FlatIdent_2D05E) then
+						while true do
+							if (v321 == (1 - 0)) then
+								if (v322 and v322:FindFirstChild("HumanoidRootPart")) then
+									local v464 = 0;
+									local v465;
+									local v466;
+									local v467;
+									local v468;
+									while true do
+										if (v464 == 3) then
+											local FlatIdent_541BC = 0;
+											while true do
+												if (FlatIdent_541BC == 0) then
+													if v467:IsKeyDown(Enum.KeyCode.S) then
+														v468 = v468 - workspace.CurrentCamera.CFrame.LookVector;
+													end
+													if v467:IsKeyDown(Enum.KeyCode.A) then
+														v468 = v468 - workspace.CurrentCamera.CFrame.RightVector;
+													end
+													FlatIdent_541BC = 1;
+												end
+												if (FlatIdent_541BC == 1) then
+													v464 = 4 + 0;
+													break;
+												end
+											end
+										end
+										if (v464 == (513 - (409 + 103))) then
+											local v514 = 236 - (46 + 190);
+											while true do
+												if (v514 == (96 - (51 + 44))) then
+													v464 = 1 + 1;
+													break;
+												end
+												if (0 == v514) then
+													local FlatIdent_87DF2 = 0;
+													while true do
+														if (FlatIdent_87DF2 == 0) then
+															v466 = v322.HumanoidRootPart;
+															v467 = game:GetService("UserInputService");
+															FlatIdent_87DF2 = 1;
+														end
+														if (1 == FlatIdent_87DF2) then
+															v514 = 1318 - (1114 + 203);
+															break;
+														end
+													end
+												end
+											end
+										end
+										if (v464 == 4) then
+											if v467:IsKeyDown(Enum.KeyCode.D) then
+												v468 = v468 + workspace.CurrentCamera.CFrame.RightVector;
+											end
+											if (v468.Magnitude > (726 - (228 + 498))) then
+												local FlatIdent_91CC4 = 0;
+												local v535;
+												while true do
+													if (FlatIdent_91CC4 == 0) then
+														v535 = 0 + 0;
+														while true do
+															if (v535 == (0 + 0)) then
+																v468 = v468.Unit * (v23 / (679 - (174 + 489)));
+																v466.CFrame = v466.CFrame + v468;
+																break;
+															end
+														end
+														break;
+													end
+												end
+											end
+											break;
+										end
+										if (v464 == (5 - 3)) then
+											local FlatIdent_3E203 = 0;
+											local v515;
+											while true do
+												if (FlatIdent_3E203 == 0) then
+													v515 = 1905 - (830 + 1075);
+													while true do
+														if (v515 == (524 - (303 + 221))) then
+															local FlatIdent_8C3A2 = 0;
+															while true do
+																if (FlatIdent_8C3A2 == 0) then
+																	v468 = Vector3.new(1269 - (231 + 1038), 0 + 0, 1162 - (171 + 991));
+																	if v467:IsKeyDown(Enum.KeyCode.W) then
+																		v468 = v468 + workspace.CurrentCamera.CFrame.LookVector;
+																	end
+																	FlatIdent_8C3A2 = 1;
+																end
+																if (FlatIdent_8C3A2 == 1) then
+																	v515 = 4 - 3;
+																	break;
+																end
+															end
+														end
+														if (v515 == 1) then
+															v464 = 7 - 4;
+															break;
+														end
+													end
+													break;
+												end
+											end
+										end
+										if (v464 == (0 - 0)) then
+											local FlatIdent_66193 = 0;
+											while true do
+												if (FlatIdent_66193 == 0) then
+													v465 = v322:FindFirstChildOfClass("Humanoid");
+													if v465 then
+														v465.WalkSpeed = v23;
+													end
+													FlatIdent_66193 = 1;
+												end
+												if (1 == FlatIdent_66193) then
+													v464 = 1 + 0;
+													break;
+												end
+											end
+										end
+									end
+								end
+								break;
+							end
+							if (v321 == 0) then
+								local FlatIdent_1B878 = 0;
+								while true do
+									if (FlatIdent_1B878 == 1) then
+										v321 = 3 - 2;
+										break;
+									end
+									if (0 == FlatIdent_1B878) then
+										if not v15 then
+											return;
+										end
+										v322 = game.Players.LocalPlayer.Character;
+										FlatIdent_1B878 = 1;
+									end
+								end
+							end
+						end
+						break;
+					end
+					if (FlatIdent_2D05E == 0) then
+						v321 = 0 + 0;
+						v322 = nil;
+						FlatIdent_2D05E = 1;
+					end
+				end
+			end);
+			break;
+		end
+	end
+end
+local function v63()
+	local FlatIdent_75FFA = 0;
+	local v143;
+	while true do
+		if (FlatIdent_75FFA == 0) then
+			if v30 then
+				local FlatIdent_60A2E = 0;
+				local v256;
+				while true do
+					if (FlatIdent_60A2E == 0) then
+						v256 = 0 - 0;
+						while true do
+							if ((0 - 0) == v256) then
+								v30:Disconnect();
+								v30 = nil;
+								break;
+							end
+						end
+						break;
+					end
+				end
+			end
+			v143 = game.Players.LocalPlayer.Character;
+			FlatIdent_75FFA = 1;
+		end
+		if (FlatIdent_75FFA == 1) then
+			if (v143 and v143:FindFirstChildOfClass("Humanoid") and v25) then
+				v143:FindFirstChildOfClass("Humanoid").WalkSpeed = v25;
+			end
+			break;
+		end
+	end
+end
+local function v64()
+	local FlatIdent_4543F = 0;
+	local v144;
+	local v145;
+	while true do
+		if (FlatIdent_4543F == 0) then
+			v144 = 0 - 0;
+			v145 = nil;
+			FlatIdent_4543F = 1;
+		end
+		if (FlatIdent_4543F == 1) then
+			while true do
+				if (v144 == (1249 - (111 + 1137))) then
+					for v323, v324 in pairs(v145:GetDescendants()) do
+						if (v324:IsA("BasePart") and (v26[v324] == nil)) then
+							v26[v324] = v324.CanCollide;
+						end
+					end
+					break;
+				end
+				if (v144 == (158 - (91 + 67))) then
+					local FlatIdent_3A655 = 0;
+					while true do
+						if (FlatIdent_3A655 == 1) then
+							v144 = 2 - 1;
+							break;
+						end
+						if (FlatIdent_3A655 == 0) then
+							v145 = game.Players.LocalPlayer.Character;
+							if not v145 then
+								return;
+							end
+							FlatIdent_3A655 = 1;
+						end
+					end
+				end
+			end
+			break;
+		end
+	end
+end
+local function v65()
+	local FlatIdent_5D472 = 0;
+	while true do
+		if (1 == FlatIdent_5D472) then
+			v31 = game:GetService("RunService").Stepped:Connect(function()
+				local FlatIdent_4DC63 = 0;
+				local v234;
+				local v235;
+				while true do
+					if (FlatIdent_4DC63 == 0) then
+						v234 = 0 + 0;
+						v235 = nil;
+						FlatIdent_4DC63 = 1;
+					end
+					if (FlatIdent_4DC63 == 1) then
+						while true do
+							if ((523 - (423 + 100)) == v234) then
+								local FlatIdent_2793C = 0;
+								while true do
+									if (1 == FlatIdent_2793C) then
+										v234 = 1 + 0;
+										break;
+									end
+									if (FlatIdent_2793C == 0) then
+										if not v16 then
+											return;
+										end
+										v235 = game.Players.LocalPlayer.Character;
+										FlatIdent_2793C = 1;
+									end
+								end
+							end
+							if (v234 == (2 - 1)) then
+								if v235 then
+									for v422, v423 in pairs(v235:GetDescendants()) do
+										if v423:IsA("BasePart") then
+											v423.CanCollide = false;
+										end
+									end
+								end
+								break;
+							end
+						end
+						break;
+					end
+				end
+			end);
+			break;
+		end
+		if (FlatIdent_5D472 == 0) then
+			if v31 then
+				v31:Disconnect();
+			end
+			v64();
+			FlatIdent_5D472 = 1;
+		end
+	end
+end
+local function v66()
+	local FlatIdent_113C4 = 0;
+	local v146;
+	local v147;
+	while true do
+		if (FlatIdent_113C4 == 0) then
+			v146 = 0 + 0;
+			v147 = nil;
+			FlatIdent_113C4 = 1;
+		end
+		if (FlatIdent_113C4 == 1) then
+			while true do
+				if (v146 == (772 - (326 + 445))) then
+					if v147 then
+						for v395, v396 in pairs(v147:GetDescendants()) do
+							if (v396:IsA("BasePart") and (v26[v396] ~= nil)) then
+								v396.CanCollide = v26[v396];
+							end
+						end
+					end
+					break;
+				end
+				if (v146 == (0 - 0)) then
+					local FlatIdent_6B578 = 0;
+					while true do
+						if (FlatIdent_6B578 == 0) then
+							if v31 then
+								local v342 = 0 - 0;
+								while true do
+									if (v342 == (0 - 0)) then
+										v31:Disconnect();
+										v31 = nil;
+										break;
+									end
+								end
+							end
+							v147 = game.Players.LocalPlayer.Character;
+							FlatIdent_6B578 = 1;
+						end
+						if (FlatIdent_6B578 == 1) then
+							v146 = 712 - (530 + 181);
+							break;
+						end
+					end
+				end
+			end
+			break;
+		end
+	end
+end
+local function v67()
+	local FlatIdent_186F = 0;
+	local v148;
+	while true do
+		if (0 == FlatIdent_186F) then
+			v148 = 881 - (614 + 267);
+			while true do
+				if (v148 == (32 - (19 + 13))) then
+					if v27 then
+						v27:Disconnect();
+					end
+					v27 = game:GetService("RunService").RenderStepped:Connect(function()
+						local FlatIdent_32B1C = 0;
+						local v326;
+						local v327;
+						while true do
+							if (FlatIdent_32B1C == 1) then
+								while true do
+									if (v326 == (1 - 0)) then
+										if (v327 and v327:FindFirstChildOfClass("Humanoid")) then
+											local FlatIdent_5F12F = 0;
+											local v470;
+											local v471;
+											while true do
+												if (FlatIdent_5F12F == 0) then
+													v470 = 0;
+													v471 = nil;
+													FlatIdent_5F12F = 1;
+												end
+												if (FlatIdent_5F12F == 1) then
+													while true do
+														if (v470 == 0) then
+															v471 = v327:FindFirstChildOfClass("Humanoid");
+															if (v471.FloorMaterial ~= Enum.Material.Air) then
+																v471:ChangeState(Enum.HumanoidStateType.Jumping);
+															end
+															break;
+														end
+													end
+													break;
+												end
+											end
+										end
+										break;
+									end
+									if (v326 == (0 - 0)) then
+										local FlatIdent_62AB4 = 0;
+										while true do
+											if (FlatIdent_62AB4 == 0) then
+												if not v12 then
+													return;
+												end
+												v327 = game.Players.LocalPlayer.Character;
+												FlatIdent_62AB4 = 1;
+											end
+											if (FlatIdent_62AB4 == 1) then
+												v326 = 2 - 1;
+												break;
+											end
+										end
+									end
+								end
+								break;
+							end
+							if (FlatIdent_32B1C == 0) then
+								v326 = 0;
+								v327 = nil;
+								FlatIdent_32B1C = 1;
+							end
+						end
+					end);
+					break;
+				end
+			end
+			break;
+		end
+	end
+end
+local function v68()
+	local FlatIdent_2E48C = 0;
+	local v149;
+	local v150;
+	while true do
+		if (FlatIdent_2E48C == 1) then
+			while true do
+				if (0 == v149) then
+					v150 = 0 - 0;
+					while true do
+						if ((0 - 0) == v150) then
+							if v28 then
+								v28:Disconnect();
+							end
+							v28 = game:GetService("RunService").RenderStepped:Connect(function()
+								if not v13 then
+									return;
+								end
+								local v425 = game.Players.LocalPlayer.Character;
+								if (v425 and v425:FindFirstChild("HumanoidRootPart")) then
+									local FlatIdent_6D84C = 0;
+									local v472;
+									local v473;
+									while true do
+										if (FlatIdent_6D84C == 0) then
+											v472 = v425.HumanoidRootPart;
+											v473 = ((v22 == (1812 - (1293 + 519))) and 50) or v22;
+											FlatIdent_6D84C = 1;
+										end
+										if (FlatIdent_6D84C == 1) then
+											v472.CFrame = v472.CFrame * CFrame.Angles(0 - 0, math.rad(v473) * 0.1, 0 - 0);
+											break;
+										end
+									end
+								end
+							end);
+							break;
+						end
+					end
+					break;
+				end
+			end
+			break;
+		end
+		if (FlatIdent_2E48C == 0) then
+			v149 = 0 + 0;
+			v150 = nil;
+			FlatIdent_2E48C = 1;
+		end
+	end
+end
+local function v69()
+	local FlatIdent_6E9BC = 0;
+	local v151;
+	local v152;
+	while true do
+		if (1 == FlatIdent_6E9BC) then
+			while true do
+				if ((0 - 0) == v151) then
+					v152 = game.Players.LocalPlayer.Character;
+					if (v152 and v152:FindFirstChildOfClass("Humanoid")) then
+						v152:FindFirstChildOfClass("Humanoid").JumpPower = v24;
+					end
+					break;
+				end
+			end
+			break;
+		end
+		if (FlatIdent_6E9BC == 0) then
+			v151 = 0 - 0;
+			v152 = nil;
+			FlatIdent_6E9BC = 1;
+		end
+	end
+end
+local function v70()
+	local FlatIdent_6DCFD = 0;
+	local v153;
+	while true do
+		if (FlatIdent_6DCFD == 1) then
+			v34 = {Ambient=v153.Ambient,Brightness=v153.Brightness,GlobalShadows=v153.GlobalShadows,OutdoorAmbient=v153.OutdoorAmbient};
+			v32 = game:GetService("RunService").RenderStepped:Connect(function()
+				local FlatIdent_571C2 = 0;
+				local v236;
+				local v237;
+				while true do
+					if (FlatIdent_571C2 == 1) then
+						while true do
+							if ((2 + 1) == v236) then
+								for v344, v345 in pairs(v237:GetChildren()) do
+									if v345:IsA("Light") then
+										v345.Shadows = false;
+									end
+								end
+								break;
+							end
+							if ((1 + 1) == v236) then
+								local FlatIdent_5D1D5 = 0;
+								while true do
+									if (FlatIdent_5D1D5 == 1) then
+										v236 = 1 + 2;
+										break;
+									end
+									if (FlatIdent_5D1D5 == 0) then
+										v237.GlobalShadows = false;
+										v237.OutdoorAmbient = Color3.new(1, 2 - 1, 1);
+										FlatIdent_5D1D5 = 1;
+									end
+								end
+							end
+							if (v236 == 0) then
+								local FlatIdent_2B908 = 0;
+								while true do
+									if (1 == FlatIdent_2B908) then
+										v236 = 1 + 0;
+										break;
+									end
+									if (FlatIdent_2B908 == 0) then
+										if not v11 then
+											return;
+										end
+										v237 = game:GetService("Lighting");
+										FlatIdent_2B908 = 1;
+									end
+								end
+							end
+							if (v236 == (1 + 0)) then
+								local FlatIdent_594AA = 0;
+								while true do
+									if (FlatIdent_594AA == 1) then
+										v236 = 5 - 3;
+										break;
+									end
+									if (FlatIdent_594AA == 0) then
+										v237.Ambient = Color3.new(1097 - (709 + 387), 1, 1);
+										v237.Brightness = 1860 - (673 + 1185);
+										FlatIdent_594AA = 1;
+									end
+								end
+							end
+						end
+						break;
+					end
+					if (FlatIdent_571C2 == 0) then
+						v236 = 0 - 0;
+						v237 = nil;
+						FlatIdent_571C2 = 1;
+					end
+				end
+			end);
+			break;
+		end
+		if (0 == FlatIdent_6DCFD) then
+			if v32 then
+				return;
+			end
+			v153 = game:GetService("Lighting");
+			FlatIdent_6DCFD = 1;
+		end
+	end
+end
+local function v71()
+	local FlatIdent_582F8 = 0;
+	local v154;
+	local v155;
+	while true do
+		if (FlatIdent_582F8 == 1) then
+			while true do
+				if ((6 - 4) == v154) then
+					if v34.GlobalShadows then
+						v155.GlobalShadows = v34.GlobalShadows;
+					end
+					if v34.OutdoorAmbient then
+						v155.OutdoorAmbient = v34.OutdoorAmbient;
+					end
+					break;
+				end
+				if (v154 == 0) then
+					local FlatIdent_1B638 = 0;
+					while true do
+						if (FlatIdent_1B638 == 0) then
+							if v32 then
+								local FlatIdent_4087C = 0;
+								local v350;
+								while true do
+									if (FlatIdent_4087C == 0) then
+										v350 = 0 - 0;
+										while true do
+											if ((0 + 0) == v350) then
+												v32:Disconnect();
+												v32 = nil;
+												break;
+											end
+										end
+										break;
+									end
+								end
+							end
+							v155 = game:GetService("Lighting");
+							FlatIdent_1B638 = 1;
+						end
+						if (FlatIdent_1B638 == 1) then
+							v154 = 1 + 0;
+							break;
+						end
+					end
+				end
+				if (1 == v154) then
+					local FlatIdent_571C4 = 0;
+					while true do
+						if (FlatIdent_571C4 == 0) then
+							if v34.Ambient then
+								v155.Ambient = v34.Ambient;
+							end
+							if v34.Brightness then
+								v155.Brightness = v34.Brightness;
+							end
+							FlatIdent_571C4 = 1;
+						end
+						if (FlatIdent_571C4 == 1) then
+							v154 = 2 - 0;
+							break;
+						end
+					end
+				end
+			end
+			break;
+		end
+		if (0 == FlatIdent_582F8) then
+			v154 = 0;
+			v155 = nil;
+			FlatIdent_582F8 = 1;
+		end
+	end
+end
+local function v72()
+	local v156 = 0;
+	local v157;
+	local v158;
+	while true do
+		if (v156 == 1) then
+			local FlatIdent_2C5B6 = 0;
+			while true do
+				if (FlatIdent_2C5B6 == 2) then
+					v156 = 1933 - (609 + 1322);
+					break;
+				end
+				if (FlatIdent_2C5B6 == 1) then
+					v33.Size = UDim2.new(0 + 0, 398 - 198, 0, 78 - 38);
+					v33.Position = UDim2.new(1880.5 - (446 + 1434), -(1383 - (1040 + 243)), 0 - 0, 2067 - (559 + 1288));
+					FlatIdent_2C5B6 = 2;
+				end
+				if (FlatIdent_2C5B6 == 0) then
+					v157.Parent = game:GetService("CoreGui");
+					v33 = Instance.new("TextLabel");
+					FlatIdent_2C5B6 = 1;
+				end
+			end
+		end
+		if (v156 == 4) then
+			v158 = Instance.new("UICorner");
+			v158.CornerRadius = UDim.new(454 - (13 + 441), 29 - 21);
+			v158.Parent = v33;
+			v29 = game:GetService("RunService").RenderStepped:Connect(function()
+				local FlatIdent_1436A = 0;
+				local v332;
+				local v333;
+				while true do
+					if (FlatIdent_1436A == 0) then
+						v332 = 0 - 0;
+						v333 = nil;
+						FlatIdent_1436A = 1;
+					end
+					if (FlatIdent_1436A == 1) then
+						while true do
+							if (v332 == (4 - 3)) then
+								if (v333 and v333:FindFirstChild("HumanoidRootPart")) then
+									local FlatIdent_41533 = 0;
+									local v475;
+									local v476;
+									local v477;
+									local v478;
+									local v479;
+									while true do
+										if (2 == FlatIdent_41533) then
+											v479 = nil;
+											while true do
+												if (1 == v475) then
+													v33.Text = "GPS: " .. v477 .. "; " .. v478 .. "; " .. v479;
+													break;
+												end
+												if (v475 == 0) then
+													local FlatIdent_4C4BD = 0;
+													local v517;
+													while true do
+														if (FlatIdent_4C4BD == 0) then
+															v517 = 0;
+															while true do
+																if (v517 == (0 - 0)) then
+																	local FlatIdent_6128B = 0;
+																	while true do
+																		if (FlatIdent_6128B == 1) then
+																			v517 = 1 + 0;
+																			break;
+																		end
+																		if (0 == FlatIdent_6128B) then
+																			v476 = v333.HumanoidRootPart;
+																			v477, v478, v479 = math.floor(v476.Position.X), math.floor(v476.Position.Y), math.floor(v476.Position.Z);
+																			FlatIdent_6128B = 1;
+																		end
+																	end
+																end
+																if (v517 == (1 + 0)) then
+																	v475 = 1;
+																	break;
+																end
+															end
+															break;
+														end
+													end
+												end
+											end
+											break;
+										end
+										if (FlatIdent_41533 == 0) then
+											v475 = 0 + 0;
+											v476 = nil;
+											FlatIdent_41533 = 1;
+										end
+										if (FlatIdent_41533 == 1) then
+											v477 = nil;
+											v478 = nil;
+											FlatIdent_41533 = 2;
+										end
+									end
+								end
+								break;
+							end
+							if (v332 == (0 - 0)) then
+								local FlatIdent_54A3A = 0;
+								while true do
+									if (FlatIdent_54A3A == 0) then
+										if (not v14 or not v33) then
+											return;
+										end
+										v333 = game.Players.LocalPlayer.Character;
+										FlatIdent_54A3A = 1;
+									end
+									if (FlatIdent_54A3A == 1) then
+										v332 = 1;
+										break;
+									end
+								end
+							end
+						end
+						break;
+					end
+				end
+			end);
+			break;
+		end
+		if (v156 == 0) then
+			local FlatIdent_5BA97 = 0;
+			while true do
+				if (2 == FlatIdent_5BA97) then
+					v156 = 1 + 0;
+					break;
+				end
+				if (FlatIdent_5BA97 == 1) then
+					v157 = Instance.new("ScreenGui");
+					v157.Name = "GPSGui";
+					FlatIdent_5BA97 = 2;
+				end
+				if (FlatIdent_5BA97 == 0) then
+					if v29 then
+						v29:Disconnect();
+					end
+					if v33 then
+						v33:Destroy();
+					end
+					FlatIdent_5BA97 = 1;
+				end
+			end
+		end
+		if (v156 == (4 - 1)) then
+			local FlatIdent_41C81 = 0;
+			while true do
+				if (FlatIdent_41C81 == 2) then
+					v156 = 4;
+					break;
+				end
+				if (FlatIdent_41C81 == 1) then
+					v33.Font = Enum.Font.GothamBold;
+					v33.Parent = v157;
+					FlatIdent_41C81 = 2;
+				end
+				if (FlatIdent_41C81 == 0) then
+					v33.TextColor3 = Color3.new(1, 1, 1 + 0);
+					v33.TextSize = 8 + 6;
+					FlatIdent_41C81 = 1;
+				end
+			end
+		end
+		if (v156 == (2 + 0)) then
+			local FlatIdent_325D5 = 0;
+			while true do
+				if (FlatIdent_325D5 == 0) then
+					v33.BackgroundColor3 = Color3.fromRGB(17 + 3, 20 + 0, 453 - (153 + 280));
+					v33.BackgroundTransparency = 0.15 - 0;
+					FlatIdent_325D5 = 1;
+				end
+				if (FlatIdent_325D5 == 2) then
+					v156 = 2 + 1;
+					break;
+				end
+				if (FlatIdent_325D5 == 1) then
+					v33.BorderSizePixel = 0 + 0;
+					v33.Text = "GPS: 0; 0; 0";
+					FlatIdent_325D5 = 2;
+				end
+			end
+		end
+	end
+end
+local function v73()
+	local FlatIdent_7086C = 0;
+	local v159;
+	while true do
+		if (FlatIdent_7086C == 0) then
+			v159 = 0 + 0;
+			while true do
+				if (v159 == 0) then
+					if v29 then
+						local FlatIdent_1CE81 = 0;
+						local v355;
+						while true do
+							if (FlatIdent_1CE81 == 0) then
+								v355 = 0 + 0;
+								while true do
+									if (v355 == 0) then
+										v29:Disconnect();
+										v29 = nil;
+										break;
+									end
+								end
+								break;
+							end
+						end
+					end
+					if v33 then
+						local FlatIdent_37B33 = 0;
+						local v356;
+						while true do
+							if (FlatIdent_37B33 == 0) then
+								v356 = 0 + 0;
+								while true do
+									if (v356 == (0 - 0)) then
+										v33:Destroy();
+										v33 = nil;
+										break;
+									end
+								end
+								break;
+							end
+						end
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end
+local function v74(v160, v161, v162)
+	local FlatIdent_733BE = 0;
+	local v163;
+	local v164;
+	while true do
+		if (FlatIdent_733BE == 0) then
+			v163 = 0 + 0;
+			v164 = nil;
+			FlatIdent_733BE = 1;
+		end
+		if (FlatIdent_733BE == 1) then
+			while true do
+				if ((667 - (89 + 578)) == v163) then
+					v164 = game.Players.LocalPlayer.Character;
+					if (v164 and v164:FindFirstChild("HumanoidRootPart")) then
+						local FlatIdent_45054 = 0;
+						while true do
+							if (FlatIdent_45054 == 0) then
+								v164.HumanoidRootPart.CFrame = CFrame.new(v160, v161, v162);
+								v0:Notify({Title="Teleported",Content=string.format("to (%.1f, %.1f, %.1f)", v160, v161, v162),Duration=2});
+								break;
+							end
+						end
+					else
+						v0:Notify({Title="Error",Content="Character not found",Duration=(2 + 0)});
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end
+local function v75()
+	local FlatIdent_94DD1 = 0;
+	local v165;
+	local v166;
+	while true do
+		if (FlatIdent_94DD1 == 1) then
+			while true do
+				if (v165 == (0 - 0)) then
+					v166 = game.Players.LocalPlayer.Character;
+					if v166 then
+						local FlatIdent_2284F = 0;
+						local v358;
+						while true do
+							if (FlatIdent_2284F == 0) then
+								v358 = v166:FindFirstChildOfClass("Humanoid");
+								if v358 then
+									v358.Health = 1049 - (572 + 477);
+								end
+								break;
+							end
+						end
+					end
+					break;
+				end
+			end
+			break;
+		end
+		if (FlatIdent_94DD1 == 0) then
+			v165 = 0;
+			v166 = nil;
+			FlatIdent_94DD1 = 1;
+		end
+	end
+end
+v2:CreateToggle({Name="BOX ESP",CurrentValue=false,Callback=function(v167)
+	local FlatIdent_94874 = 0;
+	while true do
+		if (FlatIdent_94874 == 0) then
+			v6 = v167;
+			v58();
+			break;
+		end
+	end
+end});
+v2:CreateToggle({Name="TRACER ESP",CurrentValue=false,Callback=function(v168)
+	local FlatIdent_40B3B = 0;
+	local v169;
+	while true do
+		if (FlatIdent_40B3B == 0) then
+			v169 = 0;
+			while true do
+				if (v169 == (0 + 0)) then
+					v7 = v168;
+					v58();
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v2:CreateToggle({Name="CHAMS (Highlight)",CurrentValue=false,Callback=function(v170)
+	local FlatIdent_773DC = 0;
+	local v171;
+	while true do
+		if (FlatIdent_773DC == 0) then
+			v171 = 0;
+			while true do
+				if (v171 == 0) then
+					v8 = v170;
+					v58();
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v2:CreateToggle({Name="NAME ESP",CurrentValue=false,Callback=function(v172)
+	local FlatIdent_B6A2 = 0;
+	local v173;
+	while true do
+		if (FlatIdent_B6A2 == 0) then
+			v173 = 0 + 0;
+			while true do
+				if ((0 + 0) == v173) then
+					v9 = v172;
+					v58();
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v2:CreateToggle({Name="HITBOX EXPANDER (Enemies)",CurrentValue=false,Callback=function(v174)
+	local FlatIdent_4DA77 = 0;
+	local v175;
+	while true do
+		if (FlatIdent_4DA77 == 0) then
+			v175 = 86 - (84 + 2);
+			while true do
+				if (v175 == 0) then
+					v10 = v174;
+					v58();
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v2:CreateSlider({Name="Enemy Hitbox Size",Range={1,50},Increment=(843 - (497 + 345)),Suffix="studs",CurrentValue=10,Callback=function(v176)
+	local FlatIdent_4DBE1 = 0;
+	local v177;
+	while true do
+		if (FlatIdent_4DBE1 == 0) then
+			v177 = 0;
+			while true do
+				if (v177 == (0 + 0)) then
+					v20 = v176;
+					if v10 then
+						v58();
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v2:CreateToggle({Name="SELF HITBOX (Invisible)",CurrentValue=false,Callback=function(v178)
+	local FlatIdent_3F48B = 0;
+	local v179;
+	while true do
+		if (FlatIdent_3F48B == 0) then
+			v179 = 0 + 0;
+			while true do
+				if ((1333 - (605 + 728)) == v179) then
+					v18 = v178;
+					v61();
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v2:CreateSlider({Name="Self Hitbox Size",Range={1,(3 + 47)},Increment=1,Suffix="studs",CurrentValue=(36 - 26),Callback=function(v180)
+	local FlatIdent_2BB2A = 0;
+	local v181;
+	while true do
+		if (FlatIdent_2BB2A == 0) then
+			v181 = 0 + 0;
+			while true do
+				if (v181 == (0 - 0)) then
+					v21 = v180;
+					if v18 then
+						v59();
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v3:CreateToggle({Name="SPEEDHACK",CurrentValue=false,Callback=function(v182)
+	local v183 = 0 + 0;
+	while true do
+		if (v183 == 0) then
+			v15 = v182;
+			if v15 then
+				v62();
+			else
+				v63();
+			end
+			break;
+		end
+	end
+end});
+v3:CreateSlider({Name="Speed Value",Range={(505 - (457 + 32)),(1652 - (832 + 570))},Increment=1,Suffix="Walkspeed",CurrentValue=(48 + 2),Callback=function(v184)
+	local FlatIdent_3E444 = 0;
+	local v185;
+	while true do
+		if (FlatIdent_3E444 == 0) then
+			v185 = 0 + 0;
+			while true do
+				if (v185 == (0 - 0)) then
+					v23 = v184;
+					if v15 then
+						local FlatIdent_D1AF = 0;
+						local v359;
+						local v360;
+						while true do
+							if (FlatIdent_D1AF == 1) then
+								while true do
+									if (v359 == (796 - (588 + 208))) then
+										v360 = game.Players.LocalPlayer.Character;
+										if (v360 and v360:FindFirstChildOfClass("Humanoid")) then
+											v360:FindFirstChildOfClass("Humanoid").WalkSpeed = v23;
+										end
+										break;
+									end
+								end
+								break;
+							end
+							if (FlatIdent_D1AF == 0) then
+								v359 = 0 + 0;
+								v360 = nil;
+								FlatIdent_D1AF = 1;
+							end
+						end
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v3:CreateToggle({Name="NOCLIP",CurrentValue=false,Callback=function(v186)
+	local FlatIdent_7FE02 = 0;
+	local v187;
+	while true do
+		if (FlatIdent_7FE02 == 0) then
+			v187 = 0 - 0;
+			while true do
+				if (v187 == (1800 - (884 + 916))) then
+					v16 = v186;
+					if v16 then
+						v65();
+					else
+						v66();
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v3:CreateToggle({Name="BHOP (Auto Jump)",CurrentValue=false,Callback=function(v188)
+	local FlatIdent_17368 = 0;
+	while true do
+		if (FlatIdent_17368 == 0) then
+			v12 = v188;
+			if v12 then
+				v67();
+			elseif v27 then
+				local FlatIdent_21D89 = 0;
+				while true do
+					if (FlatIdent_21D89 == 0) then
+						v27:Disconnect();
+						v27 = nil;
+						break;
+					end
+				end
+			end
+			break;
+		end
+	end
+end});
+v3:CreateToggle({Name="SPIN",CurrentValue=false,Callback=function(v189)
+	local FlatIdent_951F1 = 0;
+	local v190;
+	while true do
+		if (FlatIdent_951F1 == 0) then
+			v190 = 0 - 0;
+			while true do
+				if (v190 == 0) then
+					v13 = v189;
+					if v13 then
+						v68();
+					elseif v28 then
+						local FlatIdent_69CC8 = 0;
+						local v429;
+						while true do
+							if (FlatIdent_69CC8 == 0) then
+								v429 = 0 + 0;
+								while true do
+									if (v429 == (653 - (232 + 421))) then
+										v28:Disconnect();
+										v28 = nil;
+										break;
+									end
+								end
+								break;
+							end
+						end
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v3:CreateSlider({Name="Spin Speed",Range={(1 + 0),500},Increment=(33 - 23),Suffix="deg/sec",CurrentValue=(655 - (316 + 289)),Callback=function(v191)
+	v22 = v191;
+end});
+v3:CreateToggle({Name="JUMP POWER",CurrentValue=false,Callback=function(v192)
+	local FlatIdent_5D905 = 0;
+	while true do
+		if (FlatIdent_5D905 == 0) then
+			v17 = v192;
+			if v17 then
+				v69();
+			else
+				local FlatIdent_C895 = 0;
+				local v258;
+				local v259;
+				while true do
+					if (FlatIdent_C895 == 1) then
+						while true do
+							if (v258 == (0 - 0)) then
+								v259 = game.Players.LocalPlayer.Character;
+								if (v259 and v259:FindFirstChildOfClass("Humanoid")) then
+									v259:FindFirstChildOfClass("Humanoid").JumpPower = 50;
+								end
+								break;
+							end
+						end
+						break;
+					end
+					if (FlatIdent_C895 == 0) then
+						v258 = 0;
+						v259 = nil;
+						FlatIdent_C895 = 1;
+					end
+				end
+			end
+			break;
+		end
+	end
+end});
+v3:CreateSlider({Name="Jump Power Value",Range={50,500},Increment=(435 - (360 + 65)),Suffix="JumpPower",CurrentValue=(94 + 6),Callback=function(v193)
+	local FlatIdent_91F32 = 0;
+	local v194;
+	while true do
+		if (FlatIdent_91F32 == 0) then
+			v194 = 254 - (79 + 175);
+			while true do
+				if (0 == v194) then
+					v24 = v193;
+					if v17 then
+						v69();
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v4:CreateInput({Name="X Coordinate",PlaceholderText="0",RemoveTextAfterFocusLost=false,Callback=function(v195)
+	v37 = tonumber(v195) or (0 - 0);
+end});
+v4:CreateInput({Name="Y Coordinate",PlaceholderText="0",RemoveTextAfterFocusLost=false,Callback=function(v196)
+	v38 = tonumber(v196) or 0;
+end});
+v4:CreateInput({Name="Z Coordinate",PlaceholderText="0",RemoveTextAfterFocusLost=false,Callback=function(v197)
+	v39 = tonumber(v197) or (0 + 0);
+end});
+v4:CreateButton({Name="TELEPORT TO COORDS",Callback=function()
+	v74(v37, v38, v39);
+end});
+v4:CreateButton({Name="RESET / SELF-KILL",Callback=function()
+	v75();
+end});
+v5:CreateToggle({Name="FULL BRIGHT",CurrentValue=false,Callback=function(v198)
+	local FlatIdent_1A665 = 0;
+	local v199;
+	while true do
+		if (FlatIdent_1A665 == 0) then
+			v199 = 0 - 0;
+			while true do
+				if (0 == v199) then
+					v11 = v198;
+					if v11 then
+						v70();
+					else
+						v71();
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v5:CreateToggle({Name="GPS (Coordinates)",CurrentValue=false,Callback=function(v200)
+	local v201 = 0 - 0;
+	while true do
+		if (v201 == (899 - (503 + 396))) then
+			v14 = v200;
+			if v14 then
+				v72();
+			else
+				v73();
+			end
+			break;
+		end
+	end
+end});
+v5:CreateButton({Name="REFRESH ESP (Fix Bugs)",Callback=function()
+	local FlatIdent_90135 = 0;
+	local v202;
+	while true do
+		if (FlatIdent_90135 == 0) then
+			v202 = 181 - (92 + 89);
+			while true do
+				if (v202 == 0) then
+					v58();
+					v0:Notify({Title="ESP Refreshed",Content="All ESP elements have been reset",Duration=2});
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v5:CreateButton({Name="CLEAR ALL ESP",Callback=function()
+	local FlatIdent_42111 = 0;
+	local v203;
+	while true do
+		if (FlatIdent_42111 == 0) then
+			v203 = 0;
+			while true do
+				if (v203 == 0) then
+					for v334, v335 in pairs(game.Players:GetPlayers()) do
+						v50(v335);
+					end
+					v0:Notify({Title="ESP Cleared",Content="All ESP removed",Duration=(3 - 1)});
+					break;
+				end
+			end
+			break;
+		end
+	end
+end});
+v57();
+game.Players.PlayerAdded:Connect(function(v204)
+	local FlatIdent_8684F = 0;
+	local v205;
+	local v206;
+	while true do
+		if (FlatIdent_8684F == 0) then
+			v205 = 0 + 0;
+			v206 = nil;
+			FlatIdent_8684F = 1;
+		end
+		if (FlatIdent_8684F == 1) then
+			while true do
+				if (v205 == (0 + 0)) then
+					v206 = 0 - 0;
+					while true do
+						if (v206 == (0 + 0)) then
+							wait(2 - 1);
+							if (v6 or v7 or v8 or v9 or v10) then
+								v56(v204, true);
+							end
+							break;
+						end
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end);
+game.Players.PlayerRemoving:Connect(function(v207)
+	v50(v207);
+end);
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+	local FlatIdent_5A1A4 = 0;
+	local v208;
+	while true do
+		if (FlatIdent_5A1A4 == 0) then
+			v208 = 0;
+			while true do
+				if (v208 == (3 + 0)) then
+					wait(1 + 0);
+					v58();
+					break;
+				end
+				if (v208 == (2 - 1)) then
+					local FlatIdent_218F4 = 0;
+					while true do
+						if (FlatIdent_218F4 == 1) then
+							v208 = 4 - 2;
+							break;
+						end
+						if (FlatIdent_218F4 == 0) then
+							if v18 then
+								local FlatIdent_56024 = 0;
+								local v362;
+								while true do
+									if (FlatIdent_56024 == 0) then
+										v362 = 0 + 0;
+										while true do
+											if (v362 == (0 - 0)) then
+												wait(1244.5 - (485 + 759));
+												v59();
+												break;
+											end
+										end
+										break;
+									end
+								end
+							end
+							if v15 then
+								v62();
+							end
+							FlatIdent_218F4 = 1;
+						end
+					end
+				end
+				if (v208 == 0) then
+					local FlatIdent_322E4 = 0;
+					while true do
+						if (FlatIdent_322E4 == 0) then
+							v26 = {};
+							if v35 then
+								local FlatIdent_415E2 = 0;
+								local v363;
+								while true do
+									if (0 == FlatIdent_415E2) then
+										v363 = 0;
+										while true do
+											if (v363 == (1189 - (442 + 747))) then
+												v35:Destroy();
+												v35 = nil;
+												break;
+											end
+										end
+										break;
+									end
+								end
+							end
+							FlatIdent_322E4 = 1;
+						end
+						if (1 == FlatIdent_322E4) then
+							v208 = 1136 - (832 + 303);
+							break;
+						end
+					end
+				end
+				if ((948 - (88 + 858)) == v208) then
+					local FlatIdent_2D63C = 0;
+					while true do
+						if (FlatIdent_2D63C == 1) then
+							v208 = 3;
+							break;
+						end
+						if (FlatIdent_2D63C == 0) then
+							if v16 then
+								v65();
+							end
+							if v17 then
+								v69();
+							end
+							FlatIdent_2D63C = 1;
+						end
+					end
+				end
+			end
+			break;
+		end
+	end
+end);
+v0:Notify({Title="Universal Script",Content="Successfully loaded!",Duration=(2 + 2)});
+print("Universal Script");
